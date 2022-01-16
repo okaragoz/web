@@ -1,0 +1,76 @@
+body {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1680px;
+  overflow-x: hidden;
+  min-width: 320px;
+  background-color: white;
+  box-shadow: var(--box-shadow-body, none);
+  background: rgb(0, 0, 0);
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgb(14, 14, 29) 100%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgb(14, 14, 29) 100%
+  );
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgb(14, 14, 29) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#222254",GradientType=1);
+}
+
+.logo-im {
+  height: 55px;
+}
+.about-mex {
+  width: 60%;
+
+}
+h5-t {
+  margin-top: 1rem;
+  font-family: inherit;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 1.125rem;
+  color: #f0f0f0;
+}
+
+.divd {
+  background-color: #020122 !important;
+}
+
+.has-divider-2 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.fx {
+  background-image: url(../img/dividers/bg-crat.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+
+.cartbg-1 {
+  background-image: url(../img/logos/product/cart1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cartbg-2 {
+  background-image: url(../img/logos/product/cart2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cartbg-3 {
+  background-image: url(../img/logos/product/cart3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.cartbg-4 {
+  background-image: url(../img/logos/product/cart4.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
