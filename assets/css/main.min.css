@@ -4280,7 +4280,10 @@ input[type="submit"].btn-block {
 }
 .navbar-light .navbar-nav .nav-link {
   color: rgba(14, 14, 29, 0.9);
-  font-size: 1.15rem;
+  font-size: 1.315rem;
+  line-height: 1.1;
+   letter-spacing: 0.01em;
+  
 }
 .navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover {
@@ -10661,7 +10664,7 @@ h1,
 h2,
 h3,
 h4 {
-  letter-spacing: -0.03em;
+  letter-spacing: 0.01em;
 }
 .h5,
 h5 {
