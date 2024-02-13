@@ -22,10 +22,10 @@ body {
 }
 
 .logo-im {
-  height: 55px;
+  height: 45px;
 }
 .about-mex {
-  width: 60%;
+  width: 90%;
 
 }
 h5-t {
@@ -70,7 +70,7 @@ h5-t {
   background-size: cover;
 }
 .cartbg-4 {
-  background-image: url(../img/logos/product/cart4.jpg);
+  background-image: url(../img/logos/product/cart4.gif);
   background-repeat: no-repeat;
   background-size: cover;
 }
