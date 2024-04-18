@@ -3984,6 +3984,10 @@ input[type="submit"].btn-block {
   margin-bottom: 0;
   list-style: none;
 }
+.navmen {
+  font-family: 'Tiempos Headline', serif;
+}
+
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
@@ -17190,10 +17194,6 @@ article table tr {
 .docs-graphic:not(:hover) .btn {
   opacity: 0;
 }
-
-
-
-/* Headings using 'Tiempos Headline' */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Tiempos Headline', serif;
 }
