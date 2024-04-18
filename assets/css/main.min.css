@@ -33,9 +33,9 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Manrope", -apple-system, BlinkMacSystemFont,
+  --font-family-sans-serif: "Modern Era", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    "Segoe UI Emoji", "Segoe UI Symbol", "Tiempos Headline","Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
 }
@@ -43,6 +43,69 @@
 ::after,
 ::before {
   box-sizing: border-box;
+}
+@font-face {
+  font-family: 'Modern Era';
+  src: url(./fonts/ModernEra-Regular.woff2) format("woff2"),url(./fonts/ModernEra-Regular.woff) format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Modern Era';
+  src: url(./fonts/ModernEra-Medium.woff2) format("woff2"),url(./fonts/ModernEra-Medium.woff) format("woff");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Modern Era';
+  src: url(./fonts/ModernEra-Bold.woff2) format("woff2"),url(./fonts/ModernEra-Bold.woff) format("woff");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tiempos Headline';
+  src: url(./fonts/TiemposHeadline-Light.woff) format("woff");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tiempos Headline';
+  src: url(./fonts/TiemposHeadline-Regular.woff) format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tiempos Headline';
+  src: url(./fonts/TiemposHeadline-Semibold.woff) format("woff");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tiempos Headline';
+  src: url(./fonts/TiemposHeadline-Bold.woff) format("woff");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tiempos Text Narrow';
+  src: url(./fonts/TiemposTextNarrow-Regular.woff2) format("woff2"),url(./fonts/TiemposTextNarrow-Regular.woff) format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
 }
 html {
   font-family: sans-serif;
@@ -64,7 +127,7 @@ section {
 }
 body {
   margin: 0;
-  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  font-family: "Modern Era", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
@@ -5629,7 +5692,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  font-family: "Modern Era", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
@@ -5739,7 +5802,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  font-family: "Modern Era", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
@@ -10598,56 +10661,6 @@ svg.bg-primary-3-alt * {
 }
 .text-primary svg.icon:not([class*="bg-"]) * {
   fill: #2a2a72;
-}
-@font-face {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  unicode-range: U+000-5FF;
-  src: url(../fonts/ManropeText-Regular.woff2) format("woff2-variations"),
-    url(../fonts/ManropeText-Regular.woff2) format("woff2"),
-    url(../fonts/ManropeText-Regular.woff) format("woff");
-}
-@font-face {
-  font-family: "Manrope";
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  unicode-range: U+000-5FF;
-  src: url(../fonts/ManropeText-RegularItalic.woff2) format("woff2-variations"),
-    url(../fonts/ManropeText-RegularItalic.woff2) format("woff2"),
-    url(../fonts/ManropeText-RegularItalic.woff) format("woff");
-}
-@font-face {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  unicode-range: U+000-5FF;
-  src: url(../fonts/ManropeText-Medium.woff2) format("woff2-variations"),
-    url(../fonts/ManropeText-Medium.woff2) format("woff2"),
-    url(../fonts/ManropeText-Medium.woff) format("woff");
-}
-@font-face {
-  font-family: "Manrope";
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  unicode-range: U+000-5FF;
-  src: url(../fonts/ManropeText-MediumItalic.woff2) format("woff2-variations"),
-    url(../fonts/ManropeText-MediumItalic.woff2) format("woff2"),
-    url(../fonts/ManropeText-MediumItalic.woff) format("woff");
-}
-@font-face {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  unicode-range: U+000-5FF;
-  src: url(../fonts/ManropeHeadline-Medium.woff2) format("woff2-variations"),
-    url(../fonts/ManropeHeadline-Regular.woff2) format("woff2"),
-    url(../fonts/ManropeHeadline-Regular.woff) format("woff");
 }
 html {
   -moz-osx-font-smoothing: grayscale;
@@ -17178,69 +17191,7 @@ article table tr {
   opacity: 0;
 }
 
-@font-face {
-    font-family: 'Modern Era';
-    src: url(./fonts/ModernEra-Regular.woff2) format("woff2"),url(./fonts/ModernEra-Regular.woff) format("woff");
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-}
 
-@font-face {
-    font-family: 'Modern Era';
-    src: url(./fonts/ModernEra-Medium.woff2) format("woff2"),url(./fonts/ModernEra-Medium.woff) format("woff");
-    font-style: normal;
-    font-weight: 500;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Modern Era';
-    src: url(./fonts/ModernEra-Bold.woff2) format("woff2"),url(./fonts/ModernEra-Bold.woff) format("woff");
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Tiempos Headline';
-    src: url(./fonts/TiemposHeadline-Light.woff) format("woff");
-    font-style: normal;
-    font-weight: 300;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Tiempos Headline';
-    src: url(./fonts/TiemposHeadline-Regular.woff) format("woff");
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Tiempos Headline';
-    src: url(./fonts/TiemposHeadline-Semibold.woff) format("woff");
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Tiempos Headline';
-    src: url(./fonts/TiemposHeadline-Bold.woff) format("woff");
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Tiempos Text Narrow';
-    src: url(./fonts/TiemposTextNarrow-Regular.woff2) format("woff2"),url(./fonts/TiemposTextNarrow-Regular.woff) format("woff");
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-}
 
 /* Headings using 'Tiempos Headline' */
 h1, h2, h3, h4, h5, h6 {
