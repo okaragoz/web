@@ -79,6 +79,15 @@ h5-t {
 	        animation: kenburns-top 50s cubic-bezier(0.470, 0.000, 0.745, 0.715) 1s infinite alternate-reverse both;
 }
 
+.centered-text {
+            position: absolute;
+            top: 50%; /* Adjust this value to change vertical alignment */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px; /* Example font size */
+    
+}
+
 
 @keyframes kenburns-top {
   0% {
