@@ -5,7 +5,7 @@
 
 <head>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- Globaler Seitentag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL0J3RFYCS"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -26,38 +26,33 @@
   </style>
   <script type="text/javascript">
     window.addEventListener("load", function () {
-      document.querySelector('body').classList.add('loaded');
+      document.querySelector('body').classList.add('geladen');
     });
   </script>
 
   <link href="./assets/css/main.min.css" rel="stylesheet" type="text/css" media="all" />
   <link href="./assets/css/stretch.css" rel="stylesheet" type="text/css" media="all" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 
   <link rel="preload" as="font" href="./assets/fonts/Inter-UI.var.woff2" type="font/woff2" crossorigin="anonymous">
   <link rel="icon" href="./assets/img/favicon.ico">
 
-  <!-- The loading of MaterialDesign-Webfont is deferred to speed up page rendering -->
-
   <link href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/6.5.95/css/materialdesignicons.min.css"
     rel="stylesheet" type="text/css">
-
-  <!-- The loading of KaTeX is deferred to speed up page rendering -->
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
     integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
 
-  <!-- The loading of KaTeX is deferred to speed up page rendering -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"
     integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous">
   </script>
 
-  <!-- To automatically render math in text elements, include the auto-render extension: -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
     integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+    onload="renderMathInElement(document.body);">
+  </script>
 
 </head>
 
@@ -73,10 +68,10 @@
           <img src="./assets/img/logos/logo-dark.png" style="height: 54px;">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
-          aria-expanded="false" aria-label="Toggle navigation">
-          <img class="icon navbar-toggler-open" src="./assets/img/icons/interface/menu.svg" alt="menu interface icon"
+          aria-expanded="false" aria-label="Navigation umschalten">
+          <img class="icon navbar-toggler-open" src="./assets/img/icons/interface/menu.svg" alt="Menü Interface-Icon"
             data-inject-svg />
-          <img class="icon navbar-toggler-close" src="./assets/img/icons/interface/cross.svg" alt="cross interface icon"
+          <img class="icon navbar-toggler-close" src="./assets/img/icons/interface/cross.svg" alt="Kreuz Interface-Icon"
             data-inject-svg />
         </button>
         <div class="collapse navbar-collapse justify-content-end">
@@ -84,22 +79,23 @@
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
                 <a href="#aboutme" class="nav-link dropdown-toggle navmen" data-toggle="dropdown-grid" aria-expanded="false"
-                  aria-haspopup="true">Über</a>
+                  aria-haspopup="true">Über mich</a>
               <li class="nav-item dropdown">
                 <a href="#research" class="nav-link dropdown-toggle navmen" data-toggle="dropdown-grid" aria-expanded="false"
                   aria-haspopup="true">Forschung</a>
               </li>
               <li class="nav-item dropdown">
                 <a href="#pub" class="nav-link dropdown-toggle navmen" data-toggle="dropdown-grid" aria-expanded="false"
-                  aria-haspopup="true">Veröffentlichungen</a>
+                  aria-haspopup="true">Publikationen</a>
               </li>
               <li class="nav-item dropdown">
                 <a href="#contact" class="nav-link dropdown-toggle navmen" data-toggle="dropdown-grid" aria-expanded="false"
                   aria-haspopup="true">Kontakt</a>
               </li>
-                                          <li class="nav-item dropdown">
-                <a href="./index" class="nav-link dropdown-toggle navmen" data-toggle="dropdown-grid" aria-expanded="false"
-                  aria-haspopup="true"><img src="./assets/img/flag/en.png" class="icon "></i></a>
+              <li class="nav-item dropdown">
+                <a href="./index-de" class="nav-link dropdown-toggle" data-toggle="dropdown-grid" aria-expanded="false"
+                  aria-haspopup="true"><img src="./assets/img/flag/de.png" class="icon "></i></a>
+              </li>
               </li>
             </ul>
           </div>
@@ -110,7 +106,7 @@
 
   <section class="bg-primary-2 text-light p-0 o-hidden">
     <div id="class">
-      <img src="./assets/img/head/bg_w.jpg" alt="Image" class="bg-image overlay kenburns-top align-items-end"
+      <img src="./assets/img/head/bg_w.jpg" alt="Bild" class="bg-image overlay kenburns-top align-items-end"
         style="padding-top: 1rem; background-color: var(--e-global-color-5c76fd0);opacity: 0.71;"></div>
 
     <div class="container layer-2">
@@ -118,14 +114,14 @@
       <div class="row py-6 min-vh-60 align-items-center" data-aos="fade-up">
         <div class="col-md-4 col-xl-12"><center>
 <h1  class="display-3">Dr. Oguzcan Karagoz</h1>
-<h4>Planetenwissenschaftler an der Albert-Ludwigs-Universität Freiburg</h3></center>
+<h4>Planetenwissenschaftler an der Albert-Ludwig-Universität Freiburg</h3></center>
         </div>
       </div>
     </div>
     </div>
 
     <div class="divider flip-x">
-      <img class="bg-primary-3" src="./assets/img/dividers/divider-3.svg" alt="divider graphic" data-inject-svg />
+      <img class="bg-primary-3" src="./assets/img/dividers/divider-3.svg" alt="Teilergrafik" data-inject-svg />
     </div>
   </section>
 
@@ -134,7 +130,7 @@
       <div class="row justify-content-between">
         <div class="col-md-7 mb-3 mb-md-0 text-justify">
           <br>
-          <h5-t class="text-white">Ich bin ein Planetenwissenschaftler, der die Planetentektonik, lithosphärische Deformation und Geodynamik erforscht. Mein Forschungsziel ist es, die Prozesse zu verstehen, die planetare Körper formen und die lithosphärische Deformation antreiben. Durch Fernerkundungsanalysen und Modellierung untersuche ich, welche endogenen Prozesse planetare Körper formen, über welche Zeitskalen diese Prozesse ablaufen und was Beobachtungen auf der Erde uns über andere Planeten und planetare Körper im Sonnensystem verraten können.</h5-t>
+          <h5-t class="text-white">Ich bin ein Planetenwissenschaftler, der sich mit planetarer Tektonik, lithosphärischer Deformation und Geodynamik beschäftigt. Meine Forschung zielt darauf ab, die Prozesse zu verstehen, die planetare Körper formen und lithosphärische Deformation antreiben. Durch Fernerkundungsanalyse und Modellierung erforsche ich, welche endogenen Prozesse planetare Körper formen, die Zeitskalen, über die diese Prozesse wirken, und was Beobachtungen auf der Erde uns über andere Planeten und Himmelskörper im Sonnensystem verraten können.</h5-t>
           <h5-t </h5-t> <p>
             </p>
 
@@ -143,7 +139,7 @@
           <ul class="d-flex flex-wrap list-unstyled align-items-end">
             <li class="mr-4 mb-5 aos-init aos-animate align-items-end" data-aos="fade-up" data-aos-delay="100">
              
-              <center><img src="./assets/img/about/24ME.jpg" alt="Image" class="rounded-circle about-mex" style="width: 60%;"></center>
+              <center><img src="./assets/img/about/24ME.jpg" alt="Bild" class="rounded-circle about-mex" style="width: 60%;"></center>
              
             </li>
         </div>
@@ -157,7 +153,7 @@
     <div  class="container">
       <div class="row mb-4">
         <div class="col">
-          <h2 class="h2">Forschungsinteressen</h2>
+          <h2 class="h2 navmen">Forschungsinteressen</h2>
         </div>
       </div>
       <div class="row">
@@ -167,7 +163,7 @@
             <div class="">
 
             </div>
-            <h5 class="mb-0">Planetentektonik</h5>
+            <h5-td class="mb-0">Planetarische Tektonik</h5>
           </a>
         </div>
         <div class="col-md-6 col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="400">
@@ -176,7 +172,7 @@
             <div class="">
 
             </div>
-            <h5 class="mb-0">Lithosphärische Deformation</h5>
+            <h5-td class="mb-0">Lithosphärische Deformation</h5>
           </a>
         </div>
 
@@ -185,7 +181,7 @@
             <div class="">
 
             </div>
-            <h5 class="mb-0 text-light">Geodynamische Evolution</h5>
+            <h5-td class="mb-0 text-light">Geodynamische Evolution</h5>
           </a>
         </div>
         <div class="col-md-6 col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="200">
@@ -194,7 +190,7 @@
             <div class="">
 
             </div>
-            <h5 class="mb-0">Oberflächenverarbeitungsereignisse</h5>
+            <h5-td class="mb-0">Oberflächenverarbeitungsereignisse</h5>
           </a>
         </div>
 
@@ -205,17 +201,17 @@
 
   <section id="aboutme" class="bg-primary-alt has-divider">
     <div class="divider flip-y">
-      <img src="./assets/img/dividers/divider-3.svg" alt="graphical divider" data-inject-svg />
+      <img src="./assets/img/dividers/divider-3.svg" alt="grafischer Teiler" data-inject-svg />
     </div>
     <div class="container">
       <div class="row align-items-center justify-content-around">
         <div class="col-md-6 col-xl-6 mb-3 mb-md-0">
           <div class="row justify-content-center">
             <div class="col-xl-12 col-lg-11">
-              <h2 class="h2 mb-sm-5">Über mich</h2>
-              <p class="lead" style="text-align:justify">Als Planetenwissenschaftler mit einer Spezialisierung auf die Strukturgeologie und Tektonik von terrestrischen Planeten erstreckt sich meine Expertise über fünf Jahre in der Untersuchung der komplexen Mechanismen der lithosphärischen Deformation. Meine wissenschaftlichen Bemühungen integrieren traditionelle geologische Methoden mit avantgardistischen Ansätzen in der Strukturgeologie, Fernerkundung und computergestützten Techniken, um die evolutionären Dynamiken und die potenzielle Bewohnbarkeit von Planeten zu erhellen. Obwohl sich meine Forschung vorwiegend auf die tektonischen Phänomene konzentriert, die felsige Planeten wie Mars und Venus beeinflussen, beschränkt sie sich nicht allein auf diese Gebiete.</p>
+              <h2 class="h2 mb-sm-5 navmen">Über mich</h2>
+              <p class="lead" style="text-align:justify">Als Planetenwissenschaftler mit einer Spezialisierung auf die Strukturgeologie und Tektonik terrestrischer Planeten, erstreckt sich meine Expertise über fünf Jahre bei der Untersuchung der komplexen Mechanismen lithosphärischer Deformation. Meine wissenschaftlichen Bemühungen integrieren traditionelle geologische Methodologien mit avantgardistischen Ansätzen in Strukturgeologie, Fernerkundung und Rechentechniken, um die evolutionären Dynamiken und potenzielle Habitabilität von Planeten zu erläutern. Obwohl meine Forschung hauptsächlich auf die tektonischen Phänomene konzentriert ist, die felsige Planeten wie Mars und Venus beeinflussen, ist sie nicht auf diese Bereiche beschränkt.</p>
 <br>
- <p class="lead" style="text-align:justify">Ich habe ein tiefes Interesse an Projekt- und Teammanagement, Wissenschaftskommunikation, Lehre und der Förderung von Vielfalt. Ich habe einen nachgewiesenen Erfolgsweg in organisatorischem Management und professionellem Engagement. Ich bin voll und ganz dem Aufbau einer wissenschaftlichen Gemeinschaft verpflichtet, die offener, vielfältiger und inklusiver ist.</p>
+ <p class="lead" style="text-align:justify">Ich interessiere mich zutiefst für Projekt- und Teammanagement, Wissenschaftskommunikation, Lehre und die Förderung von Vielfalt. Ich habe einen nachgewiesenen Erfolg in Organisationsmanagement und professionellem Engagement. Ich bin voll und ganz darauf ausgerichtet, eine wissenschaftliche Gemeinschaft zu fördern, die offener, vielfältiger und inklusiver ist.</p>
             </div>
             <br>
           </div>
@@ -223,7 +219,7 @@
         </div>
         <div class="col-xl-5 col-lg-5 col-md-6 mb-4 mb-md-0 aos-init aos-animate" data-aos="fade-up">
           <center>
-            <img src="./assets/img/about/me_granada.jpg" alt="Image" class="rounded shadow-3d about-mex">
+            <img src="./assets/img/about/me_granada.jpg" alt="Bild" class="rounded shadow-3d about-mex">
           </center>
         </div>
       </div>
@@ -240,7 +236,7 @@
             <li data-aos="fade-left" class="aos-init aos-animate">
               <div class="process-circle bg-primary"></div>
               <div>
-                <span class="text-small text-muted">2023 - present</span>
+                <span class="text-small text-muted">2023 - heute</span>
                 <br>
                 <h5 class="mb-0">Forschungswissenschaftler</h5>
                 <h3 class="text-small"> Albert-Ludwigs-Universität Freiburg</h3>
@@ -252,7 +248,7 @@
               <div>
                 <span class="text-small text-muted">2019 - 2023</span>
                 <br>
-                <h5 class="mb-0">Dr. rer. nat. (Deutsches Äquivalent eines Ph.D.)</h5>
+                <h5 class="mb-0">Dr. rer. nat. (deutsches Äquivalent eines Ph.D.)</h5>
                 <h3 class="text-small"> Albert-Ludwigs-Universität Freiburg</h3>
                
               </div>
@@ -262,7 +258,7 @@
               <div>
                 <span class="text-small text-muted">2019 - 2023</span>
                 <br>
-                <h5 class="mb-0 h4-t">Stipendiat des Deutschen Akademischen Austauschdienstes</h5>
+                <h5 class="mb-0 h4-t">Deutscher Akademischer Austauschdienst Stipendiat</h5>
               </div>
             </li>
             <li data-aos="fade-left" class="aos-init aos-animate">
@@ -278,7 +274,7 @@
               <div class="process-circle bg-primary"></div>
               <div>
                 <span class="text-small text-muted">2017</span><br>
-                <h5 class="mb-0">BSc. in Geologischer Ingenieurwesen</h5>
+                <h5 class="mb-0">BSc. in Geologietechnik</h5>
                                 <h3 class="text-small"> Mugla Sıtkı Kocman Universität, Türkei</h3>
 
               </div>
@@ -297,17 +293,17 @@
     <div class="container">
       <div class="row aling-items-center mb-4">
         <div class="col">
-          <h2 class="h2 mb-sm-0">Veröffentlichungen</h2>
+          <h2 class="h2 mb-sm-0 navmen">Publikationen</h2>
         </div>
         <div class="col-auto">
           <ul class="nav" role="tablist">
             <li class="nav-item">
               <a class="nav-link btn active" href="#day-one" id="day-one-tab" data-toggle="tab" aria-controls="day-one"
-                role="tab" aria-selected="true">Peer-Review-Artikel</a>
+                role="tab" aria-selected="true">Fachartikel</a>
             </li>
             <li class="nav-item">
               <a class="nav-link btn" href="#day-two" id="day-two-tab" data-toggle="tab" aria-controls="day-two"
-                role="tab" aria-selected="false">Abstrakte</a>
+                role="tab" aria-selected="false">Zusammenfassungen</a>
             </li>
           </ul>
         </div>
@@ -320,7 +316,7 @@
           <span class="h6 mb-0 text-muted">Jahr</span>
         </div>
         <div class="col">
-          <span class="h6 mb-0 text-muted">Journal</span>
+          <span class="h6 mb-0 text-muted">Zeitschrift</span>
         </div>
       </div>
       <div class="tab-content" data-aos="fade-up">
@@ -329,7 +325,7 @@
           <a href="https://doi.org/10.1029/2023JE007965"
           class="list-group-item list-group-item-action row no-gutters align-items-center py-3">
           <div class="col-xl-7 col-md-6">
-            <h6 class="mb-0">Entschlüsselung der tektonischen Geschichte des Tharsis-Aufstiegs auf dem Mars: Plume-Migration und kritische Kegelkuppel</h6>
+            <h6 class="mb-0">Entschlüsselung der tektonischen Geschichte der Tharsis-Erhebung auf dem Mars: Plattenwanderung und kritischer Kegelkuppel </h6>
           </div>
           <div class="col-md">
             <span>2024</span>
@@ -340,7 +336,7 @@
           <a href="https://doi.org/10.1016/j.epsl.2022.117759"
             class="list-group-item list-group-item-action row no-gutters align-items-center py-3">
             <div class="col-xl-7 col-md-6">
-              <h6 class="mb-0">Einblicke in die Untergrundstruktur von Runzelfalten auf dem Mars</h6>
+              <h6 class="mb-0">Einblicke in die Untergrundstruktur von Falten auf dem Mars</h6>
             </div>
             <div class="col-md">
               <span>2022</span>
@@ -351,7 +347,7 @@
             <a href="https://doi.org/10.1016/j.icarus.2021.114808"
               class="list-group-item list-group-item-action row no-gutters align-items-center py-3">
               <div class="col-xl-7 col-md-6">
-                <h6 class="mb-0">Circum-Tharsis Runzelfalten auf Lunae Planum: Morphometrie, Bildung und Krustenimplikationen.</h6>
+                <h6 class="mb-0">Circum-Tharsis-Faltenrücken auf dem Lunae Planum: Morphometrie, Bildung und Krustenimplikationen.</h6>
               </div>
               <div class="col-md">
                 <span>2022</span>
@@ -363,7 +359,8 @@
             <a href="https://doi.org/10.22531/muglajsci.314830"
               class="list-group-item list-group-item-action row no-gutters align-items-center py-3">
               <div class="col-xl-7 col-md-6">
-                <h6 class="mb-0">Eine Studie zur Morphologie und Geologie des Dulovo-Kraters; Southern Libya Montes, Mars</h6>
+                <h6 class="mb-0">Eine Studie über die Morphologie und Geologie des Dulovo-Kraters; Südliche Libya Montes, Mars
+                </h6>
               </div>
               <div class="col-md">
                 <span>2017</span>
@@ -374,18 +371,9 @@
                 </div>
               </div>
             </a>
-
-
-
-
-
-
-        </div>
-        <div id="day-two" class="list-group list-group-flush tab-pane fade" role="tabpanel"
-          aria-labelledby="day-two-tab">
-          <a href="https://envisionvenus.eu" class="list-group-item list-group-item-action row no-gutters align-items-center py-3">
+            <a href="https://envisionvenus.eu" class="list-group-item list-group-item-action row no-gutters align-items-center py-3">
             <div class="col-xl-7 col-md-6">
-              <h6 class="mb-0">Strukturanalysen der Latona Corona und des Dali Chasma, Aphrodite Terra, Venus</h6>
+              <h6 class="mb-0">Strukturanalysen der Latona Corona und Dali Chasma, Aphrodite Terra, Venus</h6>
             </div>
             <div class="col-md">
               <span>2023</span>
@@ -397,7 +385,7 @@
           
           <a href="https://doi.org/10.5194/epsc2022-59" class="list-group-item list-group-item-action row no-gutters align-items-center py-3">
             <div class="col-xl-7 col-md-6">
-              <h6 class="mb-0">Hinweise auf das unterirdische Störungsmuster von circum-Tharsis Runzelfalten</h6>
+              <h6 class="mb-0">Hinweise auf das Untergrund-Störungsmuster der circum-Tharsis-Faltenrücken</h6>
             </div>
             <div class="col-md">
               <span>2022</span>
@@ -409,7 +397,7 @@
           
           <a href="https://tsk19.geo.uni-halle.de/program/" class="list-group-item list-group-item-action row no-gutters align-items-center py-3">
             <div class="col-xl-7 col-md-6">
-              <h6 class="mb-0">Tektonische und morphometrische Analysen des circum-Tharsis-Runzelfaltensystems auf dem Mars</h6>
+              <h6 class="mb-0">Tektonische und morphometrische Analysen des circum-Tharsis-Faltenrückensystems auf dem Mars</h6>
             </div>
             <div class="col-md">
               <span>2022</span>
@@ -421,7 +409,7 @@
           
           <a href="https://www.hou.usra.edu/meetings/lpsc2022/pdf/1032.pdf" class="list-group-item list-group-item-action row no-gutters align-items-center py-3">
             <div class="col-xl-7 col-md-6">
-              <h6 class="mb-0">Einblicke in circum-Tharsis Runzelfalten</h6>
+              <h6 class="mb-0">Einblicke in Circum-Tharsis Faltenrücken</h6>
             </div>
             <div class="col-md">
               <span>2022</span>
@@ -439,25 +427,25 @@
               <span>2021</span>
             </div>
             <div class="col-md">
-              <span>73. GCT</span>
+              <span>73rd GCT</span>
             </div>
           </a>
           <a href="" class="list-group-item list-group-item-action row no-gutters align-items-center py-3">
             <div class="col-xl-7 col-md-6">
-              <h6 class="mb-0">Morphometrische und kinematische Analyse von Runzelfalten in der planetaren Tektonik</h6>
+              <h6 class="mb-0">Morphometrische und kinematische Analyse von Faltenrücken in der Planetentektonik</h6>
             </div>
             <div class="col-md">
               <span>2021</span>
             </div>
             <div class="col-md">
               <div class="d-flex align-items-center mt-2 mt-md-0">
-                <span class="h6 mb-0">73. GCT</span>
+                <span class="h6 mb-0">73rd GCT</span>
               </div>
             </div>
           </a>
           <a href="" class="list-group-item list-group-item-action row no-gutters align-items-center py-3">
             <div class="col-xl-7 col-md-6">
-              <h6 class="mb-0">Geodynamische Evolution von Runzelfalten und Rate der Krustenverkürzung auf Lunae Planum,
+              <h6 class="mb-0">Geodynamische Entwicklung von Faltenrücken und Rate der Krustenverkürzung auf dem Lunae Planum,
                 Mars</h6>
             </div>
             <div class="col-md">
@@ -472,7 +460,7 @@
           </a>
           <a href="" class="list-group-item list-group-item-action row no-gutters align-items-center py-3">
             <div class="col-xl-7 col-md-6">
-              <h6 class="mb-0">Strukturelles Mapping von Granitoiden im Peak-Ring des Chicxulub-Kraters: Schadensverteilung
+              <h6 class="mb-0">Strukturelle Kartierung von Granitoiden im Peak-Ring des Chicxulub-Kraters: Schadensverteilung
                 und Blockgrößen.</h6>
             </div>
             <div class="col-md">
@@ -487,7 +475,7 @@
           </a>
           <a href="" class="list-group-item list-group-item-action row no-gutters align-items-center py-3">
             <div class="col-xl-7 col-md-6">
-              <h6 class="mb-0">Federmerkmalsorientierungen in geschockten granitischen Gesteinen von Chicxulubs Peak-Ring</h6>
+              <h6 class="mb-0">Orientierung von Federmerkmalen in geschockten granitischen Gesteinen des Chicxulub's Peak Ring</h6>
             </div>
             <div class="col-md">
               <span>2018</span>
@@ -498,7 +486,7 @@
           </a>
           <a href="" class="list-group-item list-group-item-action row no-gutters align-items-center py-3">
             <div class="col-xl-7 col-md-6">
-              <h6 class="mb-0">Chronologie der Bildung von Runzelfalten und Rate der Krustenverkürzung auf Lunae Planum,
+              <h6 class="mb-0">Chronologie der Faltenrückenbildung und Rate der Krustenverkürzung auf dem Lunae Planum,
                 Mars</h6>
             </div>
             <div class="col-md">
@@ -518,12 +506,6 @@
     </div>
   </section>
 
-
-
-
-
-
-
   <footer class="pb-4 bg-primary-2 text-light fx" id="contact">
     <div class="container">
       <div class="row mb-5">
@@ -531,14 +513,14 @@
           <h5>Kontakt</h5>
           <ul class="list-unstyled">
             <li class="mb-3 d-flex">
-              <img class="icon" src="./assets/img/icons/theme/map/marker-1.svg" alt="marker-1 icon" data-inject-svg />
+              <img class="icon" src="./assets/img/icons/theme/map/marker-1.svg" alt="Marker-1 Icon" data-inject-svg />
               <div class="ml-3">
                 <span>Albert-Ludwigs-Universität Freiburg
                   <br />Albertstr 23b, Freiburg, 79104</span>
               </div>
             </li>
             <li class="mb-3 d-flex">
-              <img class="icon" src="./assets/img/icons/theme/communication/mail.svg" alt="mail icon" data-inject-svg />
+              <img class="icon" src="./assets/img/icons/theme/communication/mail.svg" alt="Mail Icon" data-inject-svg />
               <div class="ml-3">
                 <a href="mailto:oguzcan.karagoz@geologie.uni-freiburg.de">oguzcan.karagoz@geologie.uni-freiburg.de</a>
               </div>
@@ -551,19 +533,19 @@
             <ul class="nav">
               <li class="nav-item">
                 <a href="https://github.com/okaragoz" class="nav-link">
-                  <img class="icon " src="./assets/img/icons/social/github.svg" alt="twitter social icon"
+                  <img class="icon " src="./assets/img/icons/social/github.svg" alt="Github soziales Icon"
                     data-inject-svg />
                 </a>
               </li>
               <li class="nav-item">
                 <a href="https://www.linkedin.com/in/oguzcan-karagoz-0365a43a/?originalSubdomain=de" class="nav-link">
-                  <img class="icon " src="./assets/img/icons/social/linkedin.svg" alt="twitter social icon"
+                  <img class="icon " src="./assets/img/icons/social/linkedin.svg" alt="Linkedin soziales Icon"
                     data-inject-svg />
                 </a>
               </li>
               <li class="nav-item">
                 <a href="https://www.researchgate.net/profile/Oguzcan-Karagoz" class="nav-link">
-                  <img class="icon " src="./assets/img/icons/social/researchgate1.svg" alt="twitter social icon"
+                  <img class="icon " src="./assets/img/icons/social/researchgate1.svg" alt="ResearchGate soziales Icon"
                     data-inject-svg />
                 </a>
               </li>
@@ -581,7 +563,7 @@
 
         <div class="col col-md-auto text-left">
           <p class="mb-0">
-            © 2024 Design mit
+            © 2024 Gestaltet mit
             <i class="mdi mdi-heart text-danger"></i> +
             <i class="mdi mdi-coffee text-white"></i> von Oguzcan Karagoz.
           </p>
@@ -590,66 +572,59 @@
     </div>
   </footer>
 
-
-
-
-
-
-
-
   <a href="#" class="btn back-to-top btn-primary btn-round" data-smooth-scroll data-aos="fade-up" data-aos-offset="2000"
     data-aos-mirror="true" data-aos-once="false">
-    <img class="icon" src="./assets/img/icons/theme/navigation/arrow-up.svg" alt="arrow-up icon" data-inject-svg />
+    <img class="icon" src="./assets/img/icons/theme/navigation/arrow-up.svg" alt="Pfeil-nach-oben Icon" data-inject-svg />
   </a>
-  <!-- Required vendor scripts (Do not remove) -->
+  <!-- Erforderliche Anbieterskripte (Nicht entfernen) -->
   <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
   <script type="text/javascript" src="./assets/js/popper.min.js"></script>
   <script type="text/javascript" src="./assets/js/bootstrap.js"></script>
 
   <!-- 
-             This appears in the demo only.  This script ensures our demo countdowns are always showing a date in the future 
-             by altering the date before the countdown is initialized 
+             Dies erscheint nur in der Demo. Dieses Skript stellt sicher, dass unsere Democountdowns immer ein Datum in der Zukunft anzeigen
+             indem das Datum vor der Initialisierung des Countdowns geändert wird
         -->
 
 
-  <!-- Optional Vendor Scripts (Remove the plugin script here and comment initializer script out of index.js if site does not use that feature) -->
+  <!-- Optionale Anbieterskripte (Entfernen Sie das Plugin-Skript hier und kommentieren Sie das Initialisierer-Skript aus index.js aus, wenn die Site diese Funktion nicht verwendet) -->
 
-  <!-- AOS (Animate On Scroll - animates elements into view while scrolling down) -->
+  <!-- AOS (Animiere beim Scrollen - animiert Elemente beim Herunterscrollen in die Ansicht) -->
   <script type="text/javascript" src="./assets/js/aos.js"></script>
-  <!-- Clipboard (copies content from browser into OS clipboard) -->
+  <!-- Clipboard (kopiert Inhalte aus dem Browser in die OS-Zwischenablage) -->
   <script type="text/javascript" src="./assets/js/clipboard.min.js"></script>
-  <!-- Fancybox (handles image and video lightbox and galleries) -->
+  <!-- Fancybox (verarbeitet Bild- und Videolightboxen und -galerien) -->
   <script type="text/javascript" src="./assets/js/jquery.fancybox.min.js"></script>
-  <!-- Flatpickr (calendar/date/time picker UI) -->
+  <!-- Flatpickr (UI für Kalender/Datum-/Zeitauswahl) -->
   <script type="text/javascript" src="./assets/js/flatpickr.min.js"></script>
-  <!-- Flickity (handles touch enabled carousels and sliders) -->
+  <!-- Flickity (verarbeitet touch-fähige Karussells und Schieberegler) -->
   <script type="text/javascript" src="./assets/js/flickity.pkgd.min.js"></script>
-  <!-- Ion rangeSlider (flexible and pretty range slider elements) -->
+  <!-- Ion rangeSlider (flexible und hübsche Schieberegler-Elemente) -->
   <script type="text/javascript" src="./assets/js/ion.rangeSlider.min.js"></script>
-  <!-- Isotope (masonry layouts and filtering) -->
+  <!-- Isotope (Mauerwerk-Layouts und Filterung) -->
   <script type="text/javascript" src="./assets/js/isotope.pkgd.min.js"></script>
-  <!-- jarallax (parallax effect and video backgrounds) -->
+  <!-- jarallax (Parallax-Effekt und Videohintergründe) -->
   <script type="text/javascript" src="./assets/js/jarallax.min.js"></script>
   <script type="text/javascript" src="./assets/js/jarallax-video.min.js"></script>
   <script type="text/javascript" src="./assets/js/jarallax-element.min.js"></script>
-  <!-- jQuery Countdown (displays countdown text to a specified date) -->
+  <!-- jQuery Countdown (zeigt Countdown-Text zu einem bestimmten Datum an) -->
   <script type="text/javascript" src="./assets/js/jquery.countdown.min.js"></script>
-  <!-- jQuery smartWizard facilitates steppable wizard content -->
-  <script type="text/javascript" src="./assets/js/jquery.smartWizard.min.js"></script>
-  <!-- Plyr (unified player for Video, Audio, Vimeo and Youtube) -->
+  <!-- jQuery smartWizard erleichtert schrittweise Zauberinhalte -->
+  <script type="text/javascript" src="./assets/js/jquery.smartWizard.min.js"></script
+  <!-- Plyr (einheitlicher Spieler für Video, Audio, Vimeo und Youtube) -->
   <script type="text/javascript" src="./assets/js/plyr.polyfilled.min.js"></script>
-  <!-- Prism (displays formatted code boxes) -->
+  <!-- Prism (zeigt formatierte Codeboxen an) -->
   <script type="text/javascript" src="./assets/js/prism.js"></script>
-  <!-- ScrollMonitor (manages events for elements scrolling in and out of view) -->
-  <script type="text/javascript" src="./assets/js/scrollMonitor.js"></script>
-  <!-- Smooth scroll (animation to links in-page)-->
+  <!-- ScrollMonitor (verwaltet Ereignisse für Elemente, die in und aus der Ansicht scrollen) -->
+  <script type="text/javascript" src="./assets/js/scrollMonitor.js"></script
+  <!-- Smooth scroll (Animation zu Links auf der Seite)-->
   <script type="text/javascript" src="./assets/js/smooth-scroll.polyfills.min.js"></script>
-  <!-- SVGInjector (replaces img tags with SVG code to allow easy inclusion of SVGs with the benefit of inheriting colors and styles)-->
+  <!-- SVGInjector (ersetzt img-Tags durch SVG-Code, um das einfache Einbeziehen von SVGs mit dem Vorteil zu ermöglichen, Farben und Stile zu erben)-->
   <script type="text/javascript" src="./assets/js/svg-injector.umd.production.js"></script>
 
-  <!-- Typed text (animated typing effect)-->
-  <script type="text/javascript" src="./assets/js/typed.min.js"></script>
-  <!-- Required scripts (Do not remove) -->
+  <!-- Getippter Text (animierter Schreibe-Effekt)-->
+  <script type="text/javascript" src="./assets/js/typed.min.js"></script
+  <!-- Erforderliche Skripte (Nicht entfernen) -->
   <script type="text/javascript" src="./assets/js/theme.js"></script>
 
 </body>
