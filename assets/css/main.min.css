@@ -17197,6 +17197,9 @@ article table tr {
 h1, h2, h3, h4, h5 {
     font-family: 'Tiempos Headline', serif;
 }
+h6 {
+  font-family: 'Modern Era', serif;
+}
 
 /* Body text using 'Modern Era' */
 body {
