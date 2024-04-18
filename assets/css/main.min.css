@@ -17202,3 +17202,10 @@ h1, h2, h3, h4, h5, h6 {
 body {
     font-family: 'Modern Era', sans-serif;
 }
+h5td {
+  margin-top: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 1.2rem;
+  color: #ffffff;
+}

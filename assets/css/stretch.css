@@ -38,12 +38,12 @@ h5-t {
 }
 h5-td {
   margin-top: 1rem;
-  font-family: inherit;
   font-weight: 400;
   line-height: 1.5;
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   color: #ffffff;
 }
+
 
 .divd {
   background-color: #020122 !important;
