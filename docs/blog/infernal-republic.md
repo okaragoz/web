@@ -12,17 +12,15 @@ category: blog
 
 Here, I had to test a Roman Republic-style political simulation into a literary moral map. A senate governs under normal conditions, but crises can activate an emergency autocrat. Beneath that constitutional switch sits a richer system of patronage, propaganda, delayed legislation, factional conflict, and informal influence networks. On top of the political model, every actor is assigned a Dantean station through time, from Limbo down to Treachery.
 
-\* \*
-
 The base model already tracks a senate, an autocrat, crises, legal resistance, propaganda, patronage, delayed legislation, internal factions, and the shifting weight matrix of real political influence. I then added a second layer that interprets every person in the system through Dante’s architecture of sin. Each council member and the autocrat receive a moral station at every moment in time. The upper circles describe softer corruptions such as lust, gluttony, greed, wrath, and heresy. The deeper circles capture harder political pathologies. Violence is separated into violence against others, violence against self, and violence against God and nature. Fraud is split into the ten Malebolge-style classes, from panders and seducers down to liars and falsifiers. Treachery marks the deepest betrayal of the republic. The result is not a theological claim. It is an interpretive model. Dante’s moral geography becomes a way to visualize how political systems decay, recover, or harden under pressure. A person does not simply become more powerful or less powerful. They also move downward or upward in a moral landscape shaped by coercion, deception, institutional betrayal, and constitutional repair.
 
 In the simulation, the formal constitution and the informal network of influence do not always match. During peacetime, the senate can dominate decision-making even when the autocrat is ambitious. During a severe crisis, the emergency authority can surge. If law, transparency, and resilience are weak, short-term emergency power can become long-term capture. When resilience is strong, the republic can survive the shock and pull the system back upward. The Dante layer makes those transitions visible. Early institutional decay tends to appear as heresy, the rejection of constitutional norms. Periods of manipulation and information control often lead to fraud. Acute emergencies push many actors into violence. When the crisis passes and law returns, some actors drift back toward the lighter circles, while others remain fixed in deeper stations. In the sample run, the republic endured a long, deceptive phase, fell into a violent wartime episode, then partially recovered. The autocrat, however, remained morally anchored in treachery. What makes this useful is that it joins mathematics, political theory, and narrative symbolism in a single frame. The model still produces quantitative output such as effective power weights, faction support, legal barriers, crisis severity, and long-term entrenchment. But the Inferno mapping turns those abstractions into a visual story of republican decline and resistance. It shows not only who ruled, but what kind of moral order that rule produced.
 
 This is also a reminder that political breakdown is rarely a single event. Republics often decay in layers. First, norms weaken. Then the law bends. Then deception spreads. Then violence becomes thinkable. Only at the end does treachery appear as an obvious final condition. Dante gives us a language for that descent. Simulation gives us a way to watch it unfold.
 
-* \* \*
+![](/images/2026/04/dashboard-1.png)
 
-![](/images/2026/04/dashboard-1.png)The main dashboard. The upper left panel shows the effective power spectrum, where factional influence and autocratic concentration compete over time. The upper right panel tracks entrenched power, legal resistance, constitutional resilience, and social stress. The lower panels show factional support, barrier strength, and the centralisation pathway of policy decisions.
+The main dashboard. The upper left panel shows the effective power spectrum, where factional influence and autocratic concentration compete over time. The upper right panel tracks entrenched power, legal resistance, constitutional resilience, and social stress. The lower panels show factional support, barrier strength, and the centralisation pathway of policy decisions.
 
 ## Why combine Rome, Dante, and numerics?
 
@@ -86,9 +84,9 @@ The capture weight $\chi_t$ rises when manipulation, crisis, fragmentation, and 
 
 The moral layer assigns every person to one station of Dante’s hell at every time step. The upper circles represent lighter political corruptions such as vanity, appetite, greed, wrath, and constitutional heresy. The lower levels represent harder pathologies. 
 
-    - **Violence** is split into three stations: against others, against self, and against God or nature.
-    - **Fraud** is split into ten stations in the spirit of the _Malebolge_ : panders and seducers, flatterers, simoniacs, sorcerers, barrators, hypocrites, thieves, fraudulent counselors, sowers of discord, and liars or falsifiers.
-    - **Treachery** marks deep betrayal of faction, republic, or constitutional order.
+- **Violence** is split into three stations: against others, against self, and against God or nature.
+- **Fraud** is split into ten stations in the spirit of the _Malebolge_ : panders and seducers, flatterers, simoniacs, sorcerers, barrators, hypocrites, thieves, fraudulent counselors, sowers of discord, and liars or falsifiers.
+- **Treachery** marks deep betrayal of faction, republic, or constitutional order.
 
 For each actor $i$ and station $m$, the code computes an interpretive score 
 
@@ -96,21 +94,31 @@ $$ q_{i,m,t} = h_m\big(P_t,M_t,R_t,X_t,C_t,L_t,s_{i,t},b_{i,t},\tilde{P}_{i,t},\
 
 then assigns the deepest active station whose score exceeds a threshold, with special precedence rules for Treachery, Fraud, and the Violence subrings. 
 
-* \* \*
-
 ## How to read the Figures
 
 The first figure is the central dashboard (above). It shows the shifting power spectrum, state variables, faction support, faction barriers, and decision path. The second shows the Dante station for each person over time. The third aggregates the same information into a station-by-time population profile. The fourth and fifth place the final population back onto the funnel of hell. Together, the figures allow the reader to move from institutions to numbers to moral interpretation.
 
-![](/images/2026/04/inferno_heatmap-1.png)The Inferno heat map. Each horizontal track is one actor. Time runs left to right. Color encodes the Dante station occupied at that moment. This figure makes moral descent legible as a collective process rather than a single moment of collapse.![](/images/2026/04/station_counts.png)Final placement of all simulated actors on the Inferno map. The autocrat is marked separately. This figure turns the final moral state of the republic into a visual population map.![](/images/2026/04/selected_trajectories.png)Selected trajectories. These tracks show that actors do not all descend together. Some oscillate between milder and harsher stations. Others remain trapped in one basin of moral behavior for decades.![](/images/2026/04/inferno_people_overlay.png)Final placement of all simulated actors on the Inferno map. The autocrat is marked separately. This figure turns the final moral state of the republic into a visual population map.![](/images/2026/04/inferno_overlay_counts.png)Final station counts placed directly on the Inferno diagram. This is the cleanest summary of the simulation’s terminal moral distribution.
+![](/images/2026/04/inferno_heatmap-1.png)The Inferno heat map. Each horizontal track is one actor. Time runs left to right. Color encodes the Dante station occupied at that moment. This figure makes moral descent legible as a collective process rather than a single moment of collapse.![](/images/2026/04/station_counts.png)
+
+Final placement of all simulated actors on the Inferno map. The autocrat is marked separately. This figure turns the final moral state of the republic into a visual population map.
+
+![](/images/2026/04/selected_trajectories.png)
+
+Selected trajectories. These tracks show that actors do not all descend together. Some oscillate between milder and harsher stations. Others remain trapped in one basin of moral behavior for decades.
+
+![](/images/2026/04/inferno_people_overlay.png)
+
+Final placement of all simulated actors on the Inferno map. The autocrat is marked separately. This figure turns the final moral state of the republic into a visual population map.
+
+![](/images/2026/04/inferno_overlay_counts.png)
+
+Final station counts placed directly on the Inferno diagram. This is the cleanest summary of the simulation’s terminal moral distribution.
 
 ## Results in words
 
 In the default seed, the republic experiences a strong early authoritarian surge, then partially recovers as the legal barrier rebuilds. The moral layer is especially revealing. Early decay appears as constitutional heresy, followed by a long phase dominated by fraud-related stations, especially the deceptive classes. A wartime shock then drives many actors into violence against others. The later decades cool somewhat, with some council members moving back toward lighter stations. The autocrat, however, ends in treachery and remains dominated by treachery across the second half of the run.   
 
 This work is meant to emphasize both a technical note and a public-facing essay. It contains the equations needed to understand the mechanics, the figures needed to tell the story, and code toggles for readers who want implementation details without breaking the flow of the main text. That makes it suitable for a blog post, a project note, a computational humanities piece, or a short appendix to a larger methods paper. 
-
-* \* \*
 
 ## References
 
