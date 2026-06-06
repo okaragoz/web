@@ -56,10 +56,17 @@ html { overflow-x: clip; }
   --vp-c-brand-soft: rgba(105, 145, 199, 0.14);
 
   --vp-layout-max-width: 1400px;
+
+  /* Navbar */
+  --vp-nav-height: 84px;
+  --vp-nav-logo-height: 28px;
 }
 
 /* ---------- Light (body default) ---------- */
 :root:not(.dark) {
+  --vp-nav-bg-color: #fbfbfb;
+  --vp-nav-screen-bg-color: #ffffff;
+
   --vp-c-bg: #f7f7f5;
   --vp-c-bg-alt: #ffffff;
   --vp-c-bg-soft: #f0f0ee;
@@ -82,6 +89,9 @@ html { overflow-x: clip; }
 
 /* ---------- Dark ---------- */
 .dark {
+  --vp-nav-bg-color: #14161c;
+  --vp-nav-screen-bg-color: #16181d;
+
   --vp-c-bg: #16181d;
   --vp-c-bg-alt: #1c1f26;
   --vp-c-bg-soft: #1c1f26;
