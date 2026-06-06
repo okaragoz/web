@@ -1,19 +1,18 @@
 ---
-title: "Infernal Republic"
+title: Infernal Republic
 date: 2026-04-19
-excerpt: "Here, I had to test a Roman Republic-style political simulation into a literary moral map. A senate governs under normal conditions, but crises can activate an…"
-image: "/images/2026/04/orcagna_inferno_ullstein_high_03075375_flex_gr_format_l-1.jpg"
+excerpt: Here, I had to test a Roman Republic-style political simulation into a literary moral map. A senate governs under normal conditions, but crises can activate an…
+image: /images/2026/04/orcagna_inferno_ullstein_high_03075375_flex_gr_format_l-1.jpg
+tags:
+  - blog
 category: blog
-tags: ["blog"]
 ---
 
 # Infernal Republic
 
 Here, I had to test a Roman Republic-style political simulation into a literary moral map. A senate governs under normal conditions, but crises can activate an emergency autocrat. Beneath that constitutional switch sits a richer system of patronage, propaganda, delayed legislation, factional conflict, and informal influence networks. On top of the political model, every actor is assigned a Dantean station through time, from Limbo down to Treachery.
 
-![](/images/2026/04/orcagna_inferno_ullstein_high_03075375_flex_gr_format_l-1.jpg)Abandon all hope: this is how the descent into hell begins in Dante. Depiction from Late Middle Ages.
-
-* * *
+\* \*
 
 The base model already tracks a senate, an autocrat, crises, legal resistance, propaganda, patronage, delayed legislation, internal factions, and the shifting weight matrix of real political influence. I then added a second layer that interprets every person in the system through Dante’s architecture of sin. Each council member and the autocrat receive a moral station at every moment in time. The upper circles describe softer corruptions such as lust, gluttony, greed, wrath, and heresy. The deeper circles capture harder political pathologies. Violence is separated into violence against others, violence against self, and violence against God and nature. Fraud is split into the ten Malebolge-style classes, from panders and seducers down to liars and falsifiers. Treachery marks the deepest betrayal of the republic. The result is not a theological claim. It is an interpretive model. Dante’s moral geography becomes a way to visualize how political systems decay, recover, or harden under pressure. A person does not simply become more powerful or less powerful. They also move downward or upward in a moral landscape shaped by coercion, deception, institutional betrayal, and constitutional repair.
 
@@ -21,7 +20,7 @@ In the simulation, the formal constitution and the informal network of influence
 
 This is also a reminder that political breakdown is rarely a single event. Republics often decay in layers. First, norms weaken. Then the law bends. Then deception spreads. Then violence becomes thinkable. Only at the end does treachery appear as an obvious final condition. Dante gives us a language for that descent. Simulation gives us a way to watch it unfold.
 
-* * *
+* \* \*
 
 ![](/images/2026/04/dashboard-1.png)The main dashboard. The upper left panel shows the effective power spectrum, where factional influence and autocratic concentration compete over time. The upper right panel tracks entrenched power, legal resistance, constitutional resilience, and social stress. The lower panels show factional support, barrier strength, and the centralisation pathway of policy decisions.
 
@@ -49,7 +48,7 @@ This reduction makes the model easier to steer while still producing rich dynami
 
 The senate does not observe the executive in real time. Member $i$ reacts to a delayed and noisy signal, 
 
-$$ \tilde{P}_{i,t} = P_{t-\tau}\,\exp\!\big[-\kappa M_{t-\tau}\eta_i\big] + 0.30\,C_{t-\tau} + 0.12\,X_{t-\tau} + \varepsilon_{i,t}, $$ 
+$$ \tilde{P}_{i,t} = P_{t-\tau},\exp!\big[-\kappa M_{t-\tau}\eta_i\big] + 0.30,C_{t-\tau} + 0.12,X_{t-\tau} + \varepsilon_{i,t}, $$ 
 
 where $\tau$ is legislative latency, $\kappa$ controls obfuscation, $\eta_i$ is factional bias, and $\varepsilon_{i,t}$ is observation noise. This follows the logic of explicit numerical stepping in stochastic settings, though the present model is discrete and interpretive rather than directly estimated[4]. 
 
@@ -57,7 +56,7 @@ where $\tau$ is legislative latency, $\kappa$ controls obfuscation, $\eta_i$ is 
 
 Member support $s_{i,t}$ and member barrier $b_{i,t}$ evolve under patronage, conformity, fear, legalism, and perceived threat. In simplified form, 
 
-$$ s_{i,t+1} = \Pi_{[0,1]}\Big(s_{i,t} + \Delta t\,[g_i(M_t,C_t,\bar{s}_{f(i),t}) - \ell_i(P_t,R_t,b_{i,t})]\Big), $$ $$ b_{i,t+1} = \Pi_{[0,1]}\Big(b_{i,t} + \Delta t\,[r_i(\tilde{P}_{i,t},R_t) - c_i(M_t,P_t,C_t)]\Big). $$ 
+$$ s_{i,t+1} = \Pi_{[0,1]}\Big(s_{i,t} + \Delta t,[g_i(M_t,C_t,\bar{s}_{f(i),t}) - \ell_i(P_t,R_t,b_{i,t})]\Big), $$ $$ b_{i,t+1} = \Pi_{[0,1]}\Big(b_{i,t} + \Delta t,[r_i(\tilde{P}_{i,t},R_t) - c_i(M_t,P_t,C_t)]\Big). $$ 
 
 The operator $\Pi_{[0,1]}$ clips values to the unit interval. The first update rewards order and patronage. The second punishes norm breaking, corruption, and fatigue. 
 
@@ -65,7 +64,7 @@ The operator $\Pi_{[0,1]}$ clips values to the unit interval. The first update r
 
 The macro variables are then updated from the member field, 
 
-$$ R_{t+1} = \Pi_{[0,1]}\Big(R_t + \Delta t\,[\rho L_t(1-R_t) - \chi(P_t + 0.5M_t + 0.4X_t)R_t]\Big), $$ $$ X_{t+1} = \Pi_{[0,1]}\Big(X_t + \Delta t\,[\sigma C_t(1-X_t) + \psi F_t(1-X_t) + \beta P_t(1-L_t)(1-X_t) - \omega(R_t+0.5L_t)X_t]\Big), $$ $$ M_{t+1} = \Pi_{[0,1]}\Big(M_t + \Delta t\,[\mu P_t(1-M_t) + \nu \bar{s}_tP_t(1-M_t) + \zeta C_t(1-L_t)(1-M_t) - \lambda L_tM_t]\Big), $$ $$ P_{t+1} = \Pi_{[0,1]}\Big(P_t + \Delta t\,[\alpha P_t(1-P_t) + \xi C_t(1-L_t)(1-P_t) + \phi \bar{s}_t(1-P_t) + \gamma M_t(1-P_t) - \delta L_tP_t - \rho_R R_t(1-\bar{s}_t)P_t]\Big). $$ 
+$$ R_{t+1} = \Pi_{[0,1]}\Big(R_t + \Delta t,[\rho L_t(1-R_t) - \chi(P_t + 0.5M_t + 0.4X_t)R_t]\Big), $$ $$ X_{t+1} = \Pi_{[0,1]}\Big(X_t + \Delta t,[\sigma C_t(1-X_t) + \psi F_t(1-X_t) + \beta P_t(1-L_t)(1-X_t) - \omega(R_t+0.5L_t)X_t]\Big), $$ $$ M_{t+1} = \Pi_{[0,1]}\Big(M_t + \Delta t,[\mu P_t(1-M_t) + \nu \bar{s}_tP_t(1-M_t) + \zeta C_t(1-L_t)(1-M_t) - \lambda L_tM_t]\Big), $$ $$ P_{t+1} = \Pi_{[0,1]}\Big(P_t + \Delta t,[\alpha P_t(1-P_t) + \xi C_t(1-L_t)(1-P_t) + \phi \bar{s}_t(1-P_t) + \gamma M_t(1-P_t) - \delta L_tP_t - \rho_R R_t(1-\bar{s}_t)P_t]\Big). $$ 
 
 Here $L_t$ is effective legal strength aggregated from barriers and $F_t$ is factional fragmentation. 
 
@@ -73,13 +72,13 @@ Here $L_t$ is effective legal strength aggregated from barriers and $F_t$ is fac
 
 A crisis does not automatically hand total control to the autocrat. Instead, emergency power is activated through a sigmoid transfer, 
 
-$$ \alpha_t = \sigma\!\Big(k\,[C_t + 0.25M_t + 0.15\bar{s}_t - 0.55L_t - \theta]\Big), $$ $$ w^{\mathrm{formal}}_{a,t} = P_t + (1-P_t)\alpha_t. $$ 
+$$ \alpha_t = \sigma!\Big(k,[C_t + 0.25M_t + 0.15\bar{s}_t - 0.55L_t - \theta]\Big), $$ $$ w^{\mathrm{formal}}_{a,t} = P_t + (1-P_t)\alpha_t. $$ 
 
 This captures the Roman idea that constitutional emergency can shift power rapidly without guaranteeing permanent entrenchment. 
 
 But formal rules are not the whole story. The council also forms an informal influence network $K_t$ whose edges depend on factional similarity, ideological proximity, susceptibility, and executive pull. We use the stationary distribution of $K_t$ as a compact measure of long run centrality, following the general logic of network centrality analysis[5]. The final effective weight is then a convex blend, 
 
-$$ \mathbf{w}^{\mathrm{eff}}_t = (1-\chi_t)\,\mathbf{w}^{\mathrm{formal}}_t + \chi_t\,\boldsymbol{\pi}(K_t), $$ 
+$$ \mathbf{w}^{\mathrm{eff}}_t = (1-\chi_t),\mathbf{w}^{\mathrm{formal}}_t + \chi_t,\boldsymbol{\pi}(K_t), $$ 
 
 The capture weight $\chi_t$ rises when manipulation, crisis, fragmentation, and support for the executive jointly increase. 
 
@@ -87,9 +86,9 @@ The capture weight $\chi_t$ rises when manipulation, crisis, fragmentation, and 
 
 The moral layer assigns every person to one station of Dante’s hell at every time step. The upper circles represent lighter political corruptions such as vanity, appetite, greed, wrath, and constitutional heresy. The lower levels represent harder pathologies. 
 
-  * **Violence** is split into three stations: against others, against self, and against God or nature.
-  * **Fraud** is split into ten stations in the spirit of the _Malebolge_ : panders and seducers, flatterers, simoniacs, sorcerers, barrators, hypocrites, thieves, fraudulent counselors, sowers of discord, and liars or falsifiers.
-  * **Treachery** marks deep betrayal of faction, republic, or constitutional order.
+    - **Violence** is split into three stations: against others, against self, and against God or nature.
+    - **Fraud** is split into ten stations in the spirit of the _Malebolge_ : panders and seducers, flatterers, simoniacs, sorcerers, barrators, hypocrites, thieves, fraudulent counselors, sowers of discord, and liars or falsifiers.
+    - **Treachery** marks deep betrayal of faction, republic, or constitutional order.
 
 For each actor $i$ and station $m$, the code computes an interpretive score 
 
@@ -97,7 +96,7 @@ $$ q_{i,m,t} = h_m\big(P_t,M_t,R_t,X_t,C_t,L_t,s_{i,t},b_{i,t},\tilde{P}_{i,t},\
 
 then assigns the deepest active station whose score exceeds a threshold, with special precedence rules for Treachery, Fraud, and the Violence subrings. 
 
-* * *
+* \* \*
 
 ## How to read the Figures
 
@@ -108,18 +107,18 @@ The first figure is the central dashboard (above). It shows the shifting power s
 ## Results in words
 
 In the default seed, the republic experiences a strong early authoritarian surge, then partially recovers as the legal barrier rebuilds. The moral layer is especially revealing. Early decay appears as constitutional heresy, followed by a long phase dominated by fraud-related stations, especially the deceptive classes. A wartime shock then drives many actors into violence against others. The later decades cool somewhat, with some council members moving back toward lighter stations. The autocrat, however, ends in treachery and remains dominated by treachery across the second half of the run.   
-  
+
 This work is meant to emphasize both a technical note and a public-facing essay. It contains the equations needed to understand the mechanics, the figures needed to tell the story, and code toggles for readers who want implementation details without breaking the flow of the main text. That makes it suitable for a blog post, a project note, a computational humanities piece, or a short appendix to a larger methods paper. 
 
-* * *
+* \* \*
 
 ## References
 
-  1. Dante Alighieri. _The Divine Comedy of Dante Alighieri. Volume 1: Inferno_. Translated by Robert M. Durling. Oxford University Press, New York, 1996.
-  2. Gregory K. Golden. _Crisis Management during the Roman Republic: The Role of Political Institutions in Emergencies_. Cambridge University Press, Cambridge, 2013.
-  3. Frederik Juliaan Vervaet. “Dictator.” _Oxford Classical Dictionary_ , 2022. DOI: 10.1093/acrefore/9780199381135.013.2151.
-  4. Peter E. Kloeden and Eckhard Platen. _Numerical Solution of Stochastic Differential Equations_. Springer, Berlin and Heidelberg, 1992. DOI: 10.1007/978-3-662-12616-5.
-  5. Mark Newman. _Networks: An Introduction_. Oxford University Press, Oxford, 2010. DOI: 10.1093/acprof:oso/9780199206650.001.0001.
+    1. Dante Alighieri. _The Divine Comedy of Dante Alighieri. Volume 1: Inferno_. Translated by Robert M. Durling. Oxford University Press, New York, 1996.
+    2. Gregory K. Golden. _Crisis Management during the Roman Republic: The Role of Political Institutions in Emergencies_. Cambridge University Press, Cambridge, 2013.
+    3. Frederik Juliaan Vervaet. “Dictator.” _Oxford Classical Dictionary_ , 2022. DOI: 10.1093/acrefore/9780199381135.013.2151.
+    4. Peter E. Kloeden and Eckhard Platen. _Numerical Solution of Stochastic Differential Equations_. Springer, Berlin and Heidelberg, 1992. DOI: 10.1007/978-3-662-12616-5.
+    5. Mark Newman. _Networks: An Introduction_. Oxford University Press, Oxford, 2010. DOI: 10.1093/acprof:oso/9780199206650.001.0001.
 
 ## Full Code Block
 
@@ -717,28 +716,28 @@ def simulate_inferno_republic(cfg: MetaConfig, seed=None):
 
         perceived_threat = (
             P[delayed] * np.exp(-ip.obfuscation * M[delayed] * faction["bias"])
-            + 0.30 * crisis_severity[delayed]
-            + 0.12 * X[delayed]
-            + rng.normal(0.0, ip.observation_noise, size=N)
+                        + 0.30 * crisis_severity[delayed]
+                        + 0.12 * X[delayed]
+                        + rng.normal(0.0, ip.observation_noise, size=N)
         )
         perceived_threat = clip01(safe_array(perceived_threat, 0.2))
         perceived[k] = perceived_threat
 
         ds = (
             ip.support_gain * faction["patronage"] * M[k] * (1.0 - s_now)
-            + ip.support_order * faction["security"] * crisis_severity[k] * (1.0 - s_now)
-            + ip.conformity * (faction_mean_support - s_now)
-            - ip.support_loss * faction["legalism"] * P[k] * (1.0 - law_now) * s_now
-            - ip.support_norm * faction["legalism"] * R[k] * s_now
-            - ip.support_barrier * b_now * s_now
+                        + ip.support_order * faction["security"] * crisis_severity[k] * (1.0 - s_now)
+                        + ip.conformity * (faction_mean_support - s_now)
+                        - ip.support_loss * faction["legalism"] * P[k] * (1.0 - law_now) * s_now
+                        - ip.support_norm * faction["legalism"] * R[k] * s_now
+                        - ip.support_barrier * b_now * s_now
         )
 
         db = (
             faction["reaction"] * perceived_threat * (1.0 - b_now)
-            + ip.barrier_restoration * faction["reform"] * R[k] * (1.0 - P[k]) * (1.0 - b_now)
-            - ip.barrier_corruption * faction["susceptibility"] * M[k] * s_now * b_now
-            - ip.barrier_fear * faction["fear"] * (P[k] + 0.5 * crisis_severity[k]) * b_now
-            - ip.barrier_fatigue * crisis_severity[k] * b_now
+                        + ip.barrier_restoration * faction["reform"] * R[k] * (1.0 - P[k]) * (1.0 - b_now)
+                        - ip.barrier_corruption * faction["susceptibility"] * M[k] * s_now * b_now
+                        - ip.barrier_fear * faction["fear"] * (P[k] + 0.5 * crisis_severity[k]) * b_now
+                        - ip.barrier_fatigue * crisis_severity[k] * b_now
         )
 
         s_new = clip01(s_now + cfg.dt * safe_array(ds, 0.0))
@@ -774,11 +773,11 @@ def simulate_inferno_republic(cfg: MetaConfig, seed=None):
         np.fill_diagonal(council_raw, 0.35)
 
         autocrat_pull = clip01(
-            0.03
-            + 0.50 * M[k]
-            + 0.15 * crisis_severity[k]
-            + 0.12 * s_new
-            + 0.10 * faction["susceptibility"]
+                        0.03
+                        + 0.50 * M[k]
+                        + 0.15 * crisis_severity[k]
+                        + 0.12 * s_new
+                        + 0.10 * faction["susceptibility"]
         )
 
         row_sums = council_raw.sum(axis=1, keepdims=True)
@@ -809,9 +808,9 @@ def simulate_inferno_republic(cfg: MetaConfig, seed=None):
         capture = clip01(
             ip.capture_mix * (
                 M[k] * (1.0 - law_new)
-                + 0.30 * frag_new
-                + 0.20 * crisis_severity[k]
-                + 0.15 * mean_support
+                                + 0.30 * frag_new
+                                + 0.20 * crisis_severity[k]
+                                + 0.15 * mean_support
             )
         )
 
