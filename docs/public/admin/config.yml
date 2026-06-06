@@ -1,0 +1,105 @@
+# ============================================================
+#  Content Manager configuration (Sveltia CMS / Decap-compatible)
+#  Login is handled via GitHub OAuth — no server to maintain.
+#  Replace OWNER/REPO below with your GitHub repository.
+# ============================================================
+
+backend:
+  name: github
+  repo: okaragoz/web
+  branch: main
+  # Sveltia CMS lets you sign in with a GitHub Personal Access Token
+  # (Settings > Developer settings > Fine-grained tokens, repo: okaragoz/web,
+  # Contents: Read and write) — no OAuth server needed for PAT login.
+
+# Where uploaded images go (served from /images/...)
+media_folder: "docs/public/images/uploads"
+public_folder: "/images/uploads"
+
+# Friendly editor experience
+publish_mode: simple
+site_url: https://okaragoz.com
+
+collections:
+  # ---------- Blog posts ----------
+  - name: blog
+    label: "Blog Posts"
+    label_singular: "Blog Post"
+    folder: "docs/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    preview_path: "blog/{{slug}}"
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: date, label: Date, widget: datetime, format: "YYYY-MM-DD" }
+      - { name: excerpt, label: Excerpt, widget: text, required: false }
+      - { name: image, label: Feature image, widget: image, required: false }
+      - { name: tags, label: Tags, widget: list, required: false }
+      - { name: category, label: Category, widget: hidden, default: blog }
+      - { name: layout, label: Layout, widget: hidden, default: post }
+      - { name: body, label: Body, widget: markdown }
+
+  # ---------- Research writing ----------
+  - name: research
+    label: "Research Writing"
+    label_singular: "Research Post"
+    folder: "docs/research"
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    preview_path: "research/{{slug}}"
+    filter: { field: layout, value: post }
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: date, label: Date, widget: datetime, format: "YYYY-MM-DD" }
+      - { name: excerpt, label: Excerpt, widget: text, required: false }
+      - { name: image, label: Feature image, widget: image, required: false }
+      - { name: tags, label: Tags, widget: list, required: false, default: ["research"] }
+      - { name: category, label: Category, widget: hidden, default: research }
+      - { name: layout, label: Layout, widget: hidden, default: post }
+      - { name: body, label: Body, widget: markdown }
+
+  # ---------- Standalone pages (About, Publications) ----------
+  - name: pages
+    label: "Pages"
+    label_singular: "Page"
+    files:
+      - name: about
+        label: "About"
+        file: "docs/about.md"
+        fields:
+          - { name: title, label: Title, widget: string }
+          - { name: layout, label: Layout, widget: hidden, default: page }
+          - { name: body, label: Body, widget: markdown }
+      - name: publications
+        label: "Publications"
+        file: "docs/publications.md"
+        fields:
+          - { name: title, label: Title, widget: string }
+          - { name: layout, label: Layout, widget: hidden, default: page }
+          - { name: body, label: Body, widget: markdown }
+      - name: research_page
+        label: "Research (overview page)"
+        file: "docs/research/index.md"
+        fields:
+          - { name: title, label: Title, widget: string }
+          - { name: body, label: Body, widget: markdown }
+
+  # ---------- Site menu / navigation ----------
+  - name: settings
+    label: "Site Settings"
+    files:
+      - name: menu
+        label: "Navigation Menu"
+        file: "docs/.vitepress/data/menu.json"
+        description: "Top navigation links. Order = display order."
+        fields:
+          - name: nav
+            label: Menu Items
+            widget: list
+            fields:
+              - { name: text, label: Label, widget: string }
+              - { name: link, label: Link, widget: string }

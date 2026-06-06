@@ -1,0 +1,105 @@
+{
+  "blog": [
+    {
+      "slug": "infernal-republic",
+      "title": "Infernal Republic",
+      "date": "2026-04-19",
+      "image": "/images/2026/04/orcagna_inferno_ullstein_high_03075375_flex_gr_format_l-1.jpg",
+      "excerpt": "Here, I had to test a Roman Republic-style political simulation into a literary moral map. A senate governs under normal conditions, but crises can activate an emergency autocrat. Beneath that constitutional switch sits a richer system of patronage, propaganda, delayed legislation, factional…",
+      "url": "/blog/infernal-republic",
+      "readingTime": 9
+    },
+    {
+      "slug": "the-earths-layers-explained-by-dessert",
+      "title": "The Earth’s Layers as a Dessert?",
+      "date": "2025-04-12",
+      "image": "/images/2025/04/3-dessert-2.png",
+      "excerpt": "Some numbers in science just refuse to fit inside my head. The core of the Sun burns at over 15 million °C. The Earth has been around for 4.6 billion years. Nanoparticles measure mere billionths of a meter. I can write those values down, but I can’t really feel them—they’re too big, too small, too…",
+      "url": "/blog/the-earths-layers-explained-by-dessert",
+      "readingTime": 6
+    },
+    {
+      "slug": "pseudoscience-falsification",
+      "title": "The Line Between Science and Pseudoscience: Understanding Popper's Falsification Principle",
+      "date": "2024-12-29",
+      "image": "/images/2025/12/images.webp",
+      "excerpt": "Every so often someone asks me, half-jokingly, whether what I do is \"real science.\" It's a fair question — and it's the same one Karl Popper spent his life trying to answer. How do you tell the difference between a theory that's genuinely scientific and one that just sounds scientific? His answer…",
+      "url": "/blog/pseudoscience-falsification",
+      "readingTime": 6
+    },
+    {
+      "slug": "dual-face-ethics",
+      "title": "The Dual Face of Scientific Ethics: Navigating Responsibilities Between Laboratory and Society",
+      "date": "2024-12-25",
+      "image": "https://images.unsplash.com/photo-1625244514957-a8cdb2b7df0a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDEzfHxldGhpY3N8ZW58MHx8fHwxNzY2OTExNzUwfDA&ixlib=rb-4.1.0&q=80&w=2000",
+      "excerpt": "I don't think the bond between science and society has ever felt this tangled, or this high-stakes. Our capabilities are racing ahead - gene editing one year, artificial intelligence the next - and the old question keeps getting louder: when something goes wrong, who's on the hook? The scientist at…",
+      "url": "/blog/dual-face-ethics",
+      "readingTime": 10
+    },
+    {
+      "slug": "paper-mills",
+      "title": "Paper Mills: The Dark Side of Academic Publishing",
+      "date": "2024-08-29",
+      "image": "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDh8fGxpZXxlbnwwfHx8fDE3NjY5MTIyMjF8MA&ixlib=rb-4.1.0&q=80&w=2000",
+      "excerpt": "If you've ever wondered whether the phrase \"counterfeit consciousness\" sounds like a valid scientific term, you're not alone. Welcome to the weird world of paper mills, where fake research is big business and the scientific literature is drowning in fraud.",
+      "url": "/blog/paper-mills",
+      "readingTime": 9
+    }
+  ],
+  "research": [
+    {
+      "slug": "venuss-molten-fault-lines-how-magma-lubrication-shapes-a-planets-giant-cracks",
+      "title": "Venus's Molten Fault Lines: How Magma Lubrication Shapes a Planet's Giant Cracks",
+      "date": "2025-12-28",
+      "image": "https://images.unsplash.com/photo-1663640397122-d50df280b1db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=2000",
+      "excerpt": "We keep calling Venus Earth's \"sister planet\"—and on paper the family resemblance holds up: similar size, similar mass, similar composition. But peel back those thick, toxic clouds and you find a world of extremes. The surface is hot enough to melt lead (around 460°C), there's no water anywhere…",
+      "url": "/research/venuss-molten-fault-lines-how-magma-lubrication-shapes-a-planets-giant-cracks",
+      "readingTime": 12
+    },
+    {
+      "slug": "venus-atahensik-corona",
+      "title": "Venus's Giant Eye: How Low-Angle Faults Reveal a Planet's Volcanic Past",
+      "date": "2025-12-28",
+      "image": "https://images.unsplash.com/photo-1643330683233-ff2ac89b002c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=2000",
+      "excerpt": "Imagine standing on the surface of Venus—and just for a second, set aside the crushing atmospheric pressure and the 450°C heat. What you'd see is some of the strangest scenery anywhere in the solar system. My favorites are the coronae: massive, roughly circular structures that stretch hundreds to…",
+      "url": "/research/venus-atahensik-corona",
+      "readingTime": 15
+    },
+    {
+      "slug": "how-computer-models-helped-us-solve-a-4-billion-year-old-martian-mystery",
+      "title": "How Computer Models Helped Us Solve a 4-Billion-Year-Old Martian Mystery",
+      "date": "2025-12-28",
+      "image": "https://images.unsplash.com/photo-1635349429385-201ee3a51b88?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=2000",
+      "excerpt": "Some of the most beautiful features on Mars are also the most stubborn puzzles. Pull up a map of the Red Planet and something jumps out almost immediately: the northern half sits about 3 kilometers lower than the southern half. We call this the Martian dichotomy, and it's had scientists scratching…",
+      "url": "/research/how-computer-models-helped-us-solve-a-4-billion-year-old-martian-mystery",
+      "readingTime": 10
+    },
+    {
+      "slug": "mars-plumes",
+      "title": "Unraveling Mars's Hidden Plume History Through Wrinkle Ridges",
+      "date": "2025-02-26",
+      "image": "https://images.unsplash.com/photo-1650208312823-4a676f114aff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=2000",
+      "excerpt": "You can't really miss Mars's Tharsis region. It's a massive volcanic bulge, roughly 6,000 kilometers across and rising more than 20 kilometers high—picture a dome the size of North America, heaped with volcanic material that piled up over 4 billion years. For decades people have asked the obvious…",
+      "url": "/research/mars-plumes",
+      "readingTime": 6
+    },
+    {
+      "slug": "wrinkle-ridges",
+      "title": "What Ancient Ridge Formations Tell Us About the Red Planet's Crust",
+      "date": "2024-12-25",
+      "image": "https://images.unsplash.com/photo-1689235421711-903a1574ed7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=2000",
+      "excerpt": "Scroll through enough images of Mars and you'll start to notice them: long, wavy ridges snaking across the surface. We call them wrinkle ridges, and I've always thought of them as a planet's stretch marks - geological scars that quietly record the ancient stresses and strains that worked the…",
+      "url": "/research/wrinkle-ridges",
+      "readingTime": 6
+    },
+    {
+      "slug": "subsurface-wrinkle-ridges",
+      "title": "Peering Beneath Mars's Wrinkles: What Hidden Faults Tell Us About the Red Planet's Geology",
+      "date": "2024-12-25",
+      "image": "https://images.unsplash.com/photo-1527826507412-72e447368aa1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=2000",
+      "excerpt": "If you've ever scrolled through images of Mars, you've probably spotted them: long, sinuous ridges snaking across the surface. We call them \"wrinkle ridges,\" and from orbit they look like nothing more than gentle bumps. But they're really windows into some genuinely fascinating geology unfolding…",
+      "url": "/research/subsurface-wrinkle-ridges",
+      "readingTime": 13
+    }
+  ]
+}

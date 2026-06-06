@@ -1,0 +1,12 @@
+{
+  "nav": [
+    { "text": "Home", "link": "/" },
+    { "text": "Research", "items": [
+      { "text": "Overview", "link": "/research/" },
+      { "text": "Articles", "link": "/research/articles" }
+    ] },
+    { "text": "Publications", "link": "/publications" },
+    { "text": "Blog", "link": "/blog/" },
+    { "text": "About", "link": "/about" }
+  ]
+}

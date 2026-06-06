@@ -1,0 +1,138 @@
+import { defineConfig } from 'vitepress'
+import menu from './data/menu.json' with { type: 'json' }
+
+// ── Site identity (update SITE if the domain changes) ──
+const SITE = 'https://okaragoz.com'
+const AUTHOR = 'Oguzcan Karagoz'
+const DEFAULT_DESC = 'Oguzcan Karagoz — planetary scientist studying the structural geology, tectonics and geodynamics of Mars, Venus and the icy moons.'
+const DEFAULT_OG_IMAGE = `${SITE}/images/hero/oguzcan-portrait.png`
+
+// JSON-LD describing the researcher (helps Google / academic knowledge graph)
+const PERSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: AUTHOR,
+  givenName: 'Oguzcan',
+  familyName: 'Karagoz',
+  jobTitle: 'Planetary Scientist',
+  email: 'mailto:oguzcan.karagoz@geologie.uni-freiburg.de',
+  url: SITE,
+  image: DEFAULT_OG_IMAGE,
+  affiliation: {
+    '@type': 'CollegeOrUniversity',
+    name: 'University of Freiburg',
+    department: 'Institute of Geosciences — General Geology & Structural Geology',
+  },
+  knowsAbout: [
+    'Planetary tectonics', 'Geodynamics', 'Structural geology',
+    'Mars', 'Venus', 'Ganymede', 'Wrinkle ridges', 'Coronae', 'Numerical modelling',
+  ],
+  sameAs: [
+    'https://orcid.org/0000-0002-0656-7396',
+    'https://scholar.google.com/citations?user=Byq8LX4AAAAJ',
+    'https://www.webofscience.com/wos/author/record/57354059800',
+    'https://freidok.uni-freiburg.de/pers/276115',
+  ],
+}
+
+export default defineConfig({
+  title: AUTHOR,
+  titleTemplate: `:title — ${AUTHOR}`,
+  description: DEFAULT_DESC,
+  lang: 'en-US',
+  cleanUrls: true,
+  lastUpdated: true,
+  appearance: true,
+  sitemap: { hostname: SITE },
+
+  head: [
+    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
+    ['link', {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap'
+    }],
+    ['link', { rel: 'icon', href: '/favicon.ico', sizes: 'any' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/favicon-32.png' }],
+    ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
+    ['meta', { name: 'author', content: AUTHOR }],
+    ['meta', { name: 'theme-color', content: '#0e1014' }],
+    ['meta', { name: 'robots', content: 'index, follow' }],
+    ['meta', { property: 'og:site_name', content: AUTHOR }],
+    ['meta', { property: 'og:image', content: DEFAULT_OG_IMAGE }],
+    ['meta', { property: 'og:locale', content: 'en_US' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['link', { rel: 'me', href: 'https://orcid.org/0000-0002-0656-7396' }],
+    ['script', { type: 'application/ld+json' }, JSON.stringify(PERSON_LD)],
+  ],
+
+  // ── Per-page SEO: description, Open Graph, Twitter, canonical, article tags ──
+  transformPageData(pageData) {
+    const fm = pageData.frontmatter || {}
+    const clean = pageData.relativePath.replace(/index\.md$/, '').replace(/\.md$/, '')
+    const url = `${SITE}/${clean}`
+    const desc = fm.excerpt || fm.description || DEFAULT_DESC
+    const isHome = pageData.relativePath === 'index.md'
+    const title = isHome
+      ? `${AUTHOR} — Planetary Scientist`
+      : (pageData.title ? `${pageData.title} — ${AUTHOR}` : AUTHOR)
+    const isPost = !!(fm.date && fm.category)
+    const img = fm.image
+      ? (fm.image.startsWith('http') ? fm.image : `${SITE}${fm.image}`)
+      : DEFAULT_OG_IMAGE
+
+    const head = (pageData.frontmatter.head ??= [])
+    head.push(
+      ['meta', { name: 'description', content: desc }],
+      ['link', { rel: 'canonical', href: url }],
+      ['meta', { property: 'og:type', content: isPost ? 'article' : 'website' }],
+      ['meta', { property: 'og:title', content: title }],
+      ['meta', { property: 'og:description', content: desc }],
+      ['meta', { property: 'og:url', content: url }],
+      ['meta', { property: 'og:image', content: img }],
+      ['meta', { name: 'twitter:title', content: title }],
+      ['meta', { name: 'twitter:description', content: desc }],
+      ['meta', { name: 'twitter:image', content: img }],
+    )
+
+    if (isPost) {
+      head.push(
+        ['meta', { property: 'article:published_time', content: new Date(fm.date).toISOString() }],
+        ['meta', { property: 'article:author', content: AUTHOR }],
+        ['meta', { property: 'article:section', content: fm.category === 'research' ? 'Research' : 'Essays' }],
+        ['script', { type: 'application/ld+json' }, JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': fm.category === 'research' ? 'ScholarlyArticle' : 'BlogPosting',
+          headline: pageData.title,
+          description: desc,
+          image: img,
+          datePublished: new Date(fm.date).toISOString(),
+          author: { '@type': 'Person', name: AUTHOR, url: SITE },
+          publisher: { '@type': 'Person', name: AUTHOR },
+          mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+          keywords: Array.isArray(fm.tags) ? fm.tags.join(', ') : undefined,
+        })],
+      )
+    }
+  },
+
+  // ── Markdown: LaTeX math + Dracula code highlighting ──
+  markdown: {
+    math: true,
+    theme: { light: 'dracula', dark: 'dracula' },
+  },
+
+  themeConfig: {
+    nav: menu.nav,
+
+    // No left sidebar anywhere — pages use the full-width doc layout and keep
+    // only the right-hand "On this page" outline. (Removes the left pane and
+    // the footer-overlap it caused.)
+    sidebar: false,
+
+    outline: { level: [2, 3], label: 'Blog Content' },
+    docFooter: { prev: 'Previous', next: 'Next' },
+    lastUpdatedText: 'Updated',
+    search: { provider: 'local' },
+  },
+})
