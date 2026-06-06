@@ -13,6 +13,7 @@ import PageHero from './PageHero.vue'
 import Faq from './Faq.vue'
 import AudioPlayer from './AudioPlayer.vue'
 import NewsBanner from './NewsBanner.vue'
+import NotFound from './NotFound.vue'
 import './custom.css'
 
 export default {
@@ -21,6 +22,7 @@ export default {
     return h(DefaultTheme.Layout, null, {
       'doc-before': () => h(PostHeader),
       'layout-bottom': () => h(Footer),
+      'not-found': () => h(NotFound),
     })
   },
   enhanceApp({ app }) {

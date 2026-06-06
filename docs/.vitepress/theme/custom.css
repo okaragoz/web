@@ -9,6 +9,25 @@
    so sticky/fixed still work) prevents any stray horizontal scroll. */
 html { overflow-x: clip; }
 
+/* 404 — page not found */
+.ok-404 {
+  min-height: 62vh; display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 5rem 24px;
+}
+.ok-404__inner { max-width: 560px; }
+.ok-404__code {
+  font-family: var(--ok-font-bold);
+  font-size: clamp(5rem, 18vw, 9rem); line-height: 1; font-weight: 700;
+  letter-spacing: -0.04em; color: var(--ok-accent-deep);
+}
+.dark .ok-404__code { color: var(--ok-accent-a); }
+.ok-404__title { font-size: clamp(1.5rem, 4vw, 2.2rem); margin: 0.5rem 0 0.75rem; }
+.ok-404__text { color: var(--vp-c-text-2); font-size: 1.05rem; line-height: 1.6; margin-bottom: 2rem; }
+.ok-404__cta { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
+/* the ghost button is built for the dark hero; make it readable on the light 404 (adapts in dark mode via vars) */
+.ok-404 .ok-btn--ghost { border-color: var(--vp-c-border); color: var(--vp-c-text-1); }
+.ok-404 .ok-btn--ghost:hover { border-color: var(--ok-accent); background: var(--vp-c-bg-soft); }
+
 @font-face {
   font-family: 'TWK Lausanne';
   src: url('/fonts/TWKLausanne-300.woff2') format('woff2');
