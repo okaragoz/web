@@ -31,6 +31,7 @@ collections:
     extension: md
     format: frontmatter
     preview_path: "blog/{{slug}}"
+    filter: { field: category, value: blog }
     fields:
       - { name: title, label: Title, widget: string }
       - { name: date, label: Date, widget: datetime, format: "YYYY-MM-DD" }
@@ -51,7 +52,7 @@ collections:
     extension: md
     format: frontmatter
     preview_path: "research/{{slug}}"
-    filter: { field: layout, value: post }
+    filter: { field: category, value: research }
     fields:
       - { name: title, label: Title, widget: string }
       - { name: date, label: Date, widget: datetime, format: "YYYY-MM-DD" }
