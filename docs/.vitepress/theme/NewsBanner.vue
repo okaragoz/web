@@ -1,14 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-
-// Edit this object to change the announcement (or set show:false to hide).
-const news = {
-  show: true,
-  tag: 'News',
-  text: "I'm joining ESA's JUICE mission as a Mission Scientist for Ganymede.",
-  cta: '',
-  href: '',
-}
+import news from '../data/news.json'
+// Content is edited via the CMS (Site Settings → News Banner) or docs/.vitepress/data/news.json
 
 const KEY = 'ok-news-' + (news.href || news.text).slice(-24)
 const visible = ref(false)

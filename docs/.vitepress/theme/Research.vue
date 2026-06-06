@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import researchData from '../data/research.json'
 
 const root = ref(null)
 let rafs = []
@@ -8,86 +9,11 @@ let onResize = null
 const REDUCE = typeof window !== 'undefined' && window.matchMedia
   && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-/* ── In-depth research narrative (grouped by world, real publications) ── */
-const studies = [
-  {
-    planet: 'Venus', accent: '#C87030',
-    intro: "Venus presents a clear tectonic contrast to Earth: in the absence of plate tectonics, its young surface is covered with volcanic and tectonic structures, both familiar and exotic. My work reads these structures to understand the dynamic interior of a planet that may hold the key to Earth's own future.",
-    items: [
-      {
-        title: 'Coronae structure and low-angle faults',
-        body: "Large coronae are ringed by concentric fractures whose kinematics have long been debated. Mapping Magellan SAR and altimetry across coronae such as Atahensik, I show that low-angle faults at the rim accommodate gravitational spreading of the topographic rise — linking surface structure to subsurface plume geometry and the planet's single-lid heat loss.",
-        image: '/images/2025/12/Screenshot-2025-12-28-at-14.52.05.png',
-        papers: [
-          { label: 'Planetary & Space Science (2024)', href: 'https://doi.org/10.1016/j.pss.2024.105955' },
-          { label: 'EPSC (2024)', href: 'https://doi.org/10.5194/epsc2024-383' },
-        ],
-      },
-      {
-        title: 'Magma-lubricated fault systems',
-        body: "Venus's giant cracks may be lubricated by partial melt. Combining structural mapping with geodynamic reasoning, I examine how fault–melt interaction shapes tectonic regimes in Aphrodite Terra, and what synconvergent extension shared by Venus and Earth reveals about how a stagnant lid deforms.",
-        image: '/images/2026/03/element-437857-make-it-perspective-and-colors.png',
-        papers: [
-          { label: 'EGU — Fault–melt interaction (2025)', href: 'https://doi.org/10.5194/egusphere-egu25-235' },
-          { label: 'EGU — Synconvergent extension (2025)', href: 'https://doi.org/10.5194/egusphere-egu25-9519' },
-        ],
-      },
-    ],
-  },
-  {
-    planet: 'Mars', accent: '#C44C30',
-    intro: 'Mars preserves a four-billion-year compressional record dominated by its thick, cold lithosphere. I reconstruct that record from the planet\'s wrinkle ridges and fold-thrust systems, connecting surface shortening to flexure, global contraction, and the thermal evolution of the interior.',
-    items: [
-      {
-        title: 'Wrinkle ridges: morphometry and kinematics',
-        body: 'Wrinkle ridges are the dominant compressional landform on Mars. Using CTX, THEMIS and HiRISE topography with Trishear forward modelling, I correlate ridge morphometry with subsurface fault kinematics to quantify shortening and reconstruct the compressional stress history of the Martian plains.',
-        image: '/images/2025/12/Martian_wrinkle_ridges.jpg',
-        papers: [
-          { label: 'Icarus (2025)', href: 'https://doi.org/10.1016/j.icarus.2024.116330' },
-          { label: 'EPSC — Trishear (2024)', href: 'https://doi.org/10.5194/epsc2024-888' },
-        ],
-      },
-      {
-        title: 'The hidden faults beneath the ridges',
-        body: 'What fault geometry lies beneath a wrinkle ridge? Integrating displacement–length scaling with subsurface modelling at Lunae Planum and the circum-Tharsis plains, I constrain blind-thrust geometries and the crustal implications of distributed shortening.',
-        image: '/images/2025/12/Screenshot-2025-12-28-at-14.40.03.png',
-        papers: [
-          { label: 'Earth & Planetary Science Letters (2022)', href: 'https://doi.org/10.1016/j.epsl.2022.117759' },
-          { label: 'Icarus (2022)', href: 'https://doi.org/10.1016/j.icarus.2021.114808' },
-        ],
-      },
-      {
-        title: 'Tharsis: plume migration and a critical-taper dome',
-        body: 'The Tharsis rise records the longest tectonic history on Mars. I unravel the interplay of mantle-plume migration and critical-taper wedge mechanics across the dome, and find evidence for surprisingly recent tectonic activity in southern Tharsis.',
-        image: '/images/2025/12/Screenshot-2025-12-28-at-14.46.22.png',
-        papers: [
-          { label: 'JGR: Planets (2024)', href: 'https://doi.org/10.1029/2023JE007965' },
-          { label: 'EGU — Recent activity (2025)', href: 'https://doi.org/10.5194/egusphere-egu25-518' },
-        ],
-      },
-    ],
-  },
-  {
-    planet: 'Ganymede', accent: '#4A6FA5',
-    intro: "Ganymede couples a deforming icy shell to a subsurface ocean and a record of the solar system's largest impacts. Ahead of ESA's JUICE mission, I read its craters and grooved terrain for clues to ice rheology, shell thickness and interior structure.",
-    items: [
-      {
-        title: 'Ray and halo craters: stratigraphy and composition',
-        body: "Young impact craters excavate and redistribute Ganymede's near-surface materials. Using Galileo imagery and JUICE-relevant datasets, I read ray- and halo-crater morphology for clues to ice-shell stratigraphy and composition — directly feeding mission science.",
-        image: '',
-        papers: [
-          { label: 'EGU — Ray & halo craters (2025)', href: 'https://doi.org/10.5194/egusphere-egu25-21586' },
-        ],
-      },
-    ],
-  },
-]
-
-const missions = [
-  { name: 'EnVision', org: 'ESA · Venus orbiter', desc: 'High-resolution radar, spectroscopy and subsurface sounding of Venus. My coronae and fault-melt work feeds target selection and structural interpretation.' },
-  { name: 'VERITAS', org: 'NASA · Venus orbiter', desc: 'Global topography, SAR imaging and emissivity — a new generation of data for mapping Venusian tectonics at unprecedented resolution.' },
-  { name: 'JUICE', org: 'ESA · Jupiter icy moons', desc: 'Ganymede-focused exploration of icy-shell tectonics and impact cratering — the context for my crater-morphology and ice-rheology studies.' },
-]
+/* ── Research content (edited via CMS / docs/.vitepress/data/research.json) ── */
+const topics = researchData.topics
+const planets = researchData.planets
+const studies = researchData.studies
+const missions = researchData.missions
 
 /* ── helper: load an image ── */
 function loadImg(src) { const i = new Image(); i.src = src; return i }
@@ -401,117 +327,29 @@ onBeforeUnmount(() => {
 
   <div class="ok-reveal">
     <div class="ok-topics ok-topics--top">
-      <span class="ok-topic-pill">Planetary Geology</span>
-      <span class="ok-topic-pill">Geological Mapping</span>
-      <span class="ok-topic-pill">Structural Geology</span>
-      <span class="ok-topic-pill">Tectonics</span>
-      <span class="ok-topic-pill">Geodynamics</span>
-      <span class="ok-topic-pill">Analogue Modelling</span>
-      <span class="ok-topic-pill">Numerical Simulation</span>
+      <span v-for="t in topics" :key="t" class="ok-topic-pill">{{ t }}</span>
     </div>
   </div>
 
-  <!-- VENUS -->
-  <div class="ok-planet" id="ok-venus">
-    <div class="ok-planet__accent" style="background:#C87030;"></div>
+  <!-- PLANETS (Venus / Mars / Ganymede) — content from data/research.json -->
+  <div v-for="p in planets" :key="p.name" class="ok-planet" :id="'ok-' + p.name.toLowerCase()">
+    <div class="ok-planet__accent" :style="{ background: p.accent }"></div>
     <div class="ok-planet__top">
-      <canvas class="ok-canvas" id="ok-cv-venus" width="1040" height="620"></canvas>
+      <canvas class="ok-canvas" :id="'ok-cv-' + p.name.toLowerCase()" width="1040" height="620"></canvas>
       <div class="ok-planet__meta">
-        <span class="ok-planet-tag" style="color:#C87030;">♀ &nbsp;Venus</span>
-        <h3 class="ok-planet__title">Volcanic Resurfacing &amp; Single-Lid Tectonics</h3>
-        <p class="ok-planet__desc">Venus lacks plate tectonics yet displays a geologically young, heavily resurfaced terrain. I investigate how mantle plumes, coronae, tessera plateaus, and compressional fold belts record the planet's long-term geodynamic evolution — and what Venus reveals about the limits of Earth-like planetary behaviour.</p>
+        <span class="ok-planet-tag" :style="{ color: p.accent }">{{ p.symbol }} &nbsp;{{ p.name }}</span>
+        <h3 class="ok-planet__title">{{ p.title }}</h3>
+        <p class="ok-planet__desc">{{ p.desc }}</p>
         <div class="ok-tabs">
-          <button class="ok-tab ok-active" style="--c:#C87030">Structural</button>
-          <button class="ok-tab" style="--c:#C87030">Tectonics</button>
-          <button class="ok-tab" style="--c:#C87030">Geodynamics</button>
+          <button v-for="(tb, ti) in p.tabs" :key="tb" class="ok-tab" :class="{ 'ok-active': ti === 0 }" :style="{ '--c': p.accent }">{{ tb }}</button>
         </div>
       </div>
     </div>
     <div class="ok-subtopics">
-      <div class="ok-subtopic" data-ok-delay="0">
-        <div class="ok-subtopic__num">01 — Structural</div>
-        <div class="ok-subtopic__title">Coronae, Tessera &amp; Fracture Mapping</div>
-        <p class="ok-subtopic__body">Systematic mapping of coronae morphology, radial and concentric fracture networks, and tessera terrain using Magellan SAR and altimetry — linking surface structural patterns to subsurface plume geometry and heat flux.</p>
-      </div>
-      <div class="ok-subtopic" data-ok-delay="120">
-        <div class="ok-subtopic__num">02 — Tectonics</div>
-        <div class="ok-subtopic__title">Rifting, Fold Belts &amp; Tectonic Regimes</div>
-        <p class="ok-subtopic__body">Characterising extensional rift zones, compressional fold-and-thrust belts (chasmata, ridge belts), and the interplay of horizontal stress fields — evaluating whether transient or episodic plate-tectonic episodes are recorded in the structural fabric.</p>
-      </div>
-      <div class="ok-subtopic" data-ok-delay="240">
-        <div class="ok-subtopic__num">03 — Geodynamics</div>
-        <div class="ok-subtopic__title">Mantle Plumes &amp; Lid Regime Evolution</div>
-        <p class="ok-subtopic__body">Numerical and analogue models of plume–lithosphere interaction, heat-pipe and stagnant-lid regimes, and resurfacing mechanisms — constraining Venus's thermal history and the conditions under which a planet transitions between tectonic modes.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- MARS -->
-  <div class="ok-planet" id="ok-mars">
-    <div class="ok-planet__accent" style="background:#C44C30;"></div>
-    <div class="ok-planet__top">
-      <canvas class="ok-canvas" id="ok-cv-mars" width="1040" height="620"></canvas>
-      <div class="ok-planet__meta">
-        <span class="ok-planet-tag" style="color:#C44C30;">♂ &nbsp;Mars</span>
-        <h3 class="ok-planet__title">Compressional Tectonics &amp; Thick Lithosphere</h3>
-        <p class="ok-planet__desc">Mars preserves a four-billion-year tectonic record dominated by its anomalously thick, cold lithosphere. Wrinkle ridges, lobate scarps, and compressional fold systems are the dominant structural expressions — recording global contraction, flexural loading, and the temporal evolution of Martian crustal stress.</p>
-        <div class="ok-tabs">
-          <button class="ok-tab ok-active" style="--c:#C44C30">Structural</button>
-          <button class="ok-tab" style="--c:#C44C30">Tectonics</button>
-          <button class="ok-tab" style="--c:#C44C30">Geodynamics</button>
-        </div>
-      </div>
-    </div>
-    <div class="ok-subtopics">
-      <div class="ok-subtopic" data-ok-delay="0">
-        <div class="ok-subtopic__num">01 — Structural</div>
-        <div class="ok-subtopic__title">Wrinkle Ridges, Lobate Scarps &amp; Thrust Faults</div>
-        <p class="ok-subtopic__body">Mapping wrinkle ridge systems, lobate scarp geometries, and compressional fold-thrust belts using CTX, THEMIS, and HiRISE — measuring shortening magnitudes, fault dips, and cumulative strain to reconstruct the compressional stress history of Martian plains and highlands.</p>
-      </div>
-      <div class="ok-subtopic" data-ok-delay="120">
-        <div class="ok-subtopic__num">02 — Tectonics</div>
-        <div class="ok-subtopic__title">Lithospheric Flexure &amp; Global Contraction</div>
-        <p class="ok-subtopic__body">Modelling flexural loading from Tharsis and the resulting compressional stress field, together with global contraction from secular cooling — constraining elastic thickness, strain budgets, and the temporal sequence of compressional tectonics across Mars's geological history.</p>
-      </div>
-      <div class="ok-subtopic" data-ok-delay="240">
-        <div class="ok-subtopic__num">03 — Geodynamics</div>
-        <div class="ok-subtopic__title">Thermal Evolution &amp; Interior Dynamics</div>
-        <p class="ok-subtopic__body">Numerical simulations of Martian mantle convection, lithospheric thickening, and thermal contraction — exploring why Mars evolved as a one-plate stagnant-lid planet and how interior cooling drove the compressional tectonic regime observed at the surface.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- GANYMEDE -->
-  <div class="ok-planet" id="ok-ganymede">
-    <div class="ok-planet__accent" style="background:#4A6FA5;"></div>
-    <div class="ok-planet__top">
-      <canvas class="ok-canvas" id="ok-cv-ganymede" width="1040" height="620"></canvas>
-      <div class="ok-planet__meta">
-        <span class="ok-planet-tag" style="color:#4A6FA5;">⬡ &nbsp;Ganymede</span>
-        <h3 class="ok-planet__title">Ice Shell Tectonics, Impact Cratering &amp; Interior Structure</h3>
-        <p class="ok-planet__desc">Ganymede records a unique episode of extensional ice-shell tectonics, punctuated by some of the solar system's largest impact basins. I study grooved terrain deformation, impact crater morphology via iSALE hydrocode simulations, and the coupling between the subsurface ocean and icy crust — directly relevant to JUICE mission science.</p>
-        <div class="ok-tabs">
-          <button class="ok-tab ok-active" style="--c:#4A6FA5">Structural</button>
-          <button class="ok-tab" style="--c:#4A6FA5">Tectonics</button>
-          <button class="ok-tab" style="--c:#4A6FA5">Geodynamics</button>
-        </div>
-      </div>
-    </div>
-    <div class="ok-subtopics">
-      <div class="ok-subtopic" data-ok-delay="0">
-        <div class="ok-subtopic__num">01 — Structural</div>
-        <div class="ok-subtopic__title">Grooved Terrain, Palimpsests &amp; Impact Basins</div>
-        <p class="ok-subtopic__body">Mapping groove sets, cross-cutting relationships, and multi-ring impact basin structures using Galileo SSI and Voyager imagery — establishing structural chronology, basin rim geometry, and the influence of large impacts on the tectonic fabric of Ganymede's icy lithosphere.</p>
-      </div>
-      <div class="ok-subtopic" data-ok-delay="120">
-        <div class="ok-subtopic__num">02 — Tectonics</div>
-        <div class="ok-subtopic__title">Extensional Faulting &amp; Crater Morphology</div>
-        <p class="ok-subtopic__body">Analysing normal fault kinematics in grooved terrain and the anomalous morphology of large craters in ice — central pits, domes, and multi-ring basins whose relaxed forms encode ice rheology and shell thickness at the time of impact.</p>
-      </div>
-      <div class="ok-subtopic" data-ok-delay="240">
-        <div class="ok-subtopic__num">03 — Geodynamics</div>
-        <div class="ok-subtopic__title">iSALE Impact Simulations &amp; Ocean–Ice Coupling</div>
-        <p class="ok-subtopic__body">Hypervelocity impact cratering simulations in icy targets using iSALE — modelling shock pressure, melt generation, and crater scaling in layered ice-over-ocean systems. Combined with ocean–ice geodynamic models to interpret the tectonic response to large basin-forming events on icy ocean worlds.</p>
+      <div v-for="(st, si) in p.subtopics" :key="st.num" class="ok-subtopic" :data-ok-delay="si * 120">
+        <div class="ok-subtopic__num">{{ st.num }}</div>
+        <div class="ok-subtopic__title">{{ st.title }}</div>
+        <p class="ok-subtopic__body">{{ st.body }}</p>
       </div>
     </div>
   </div>

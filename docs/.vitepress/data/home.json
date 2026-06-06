@@ -1,0 +1,15 @@
+{
+  "eyebrow": "Planetary Science · Tectonics · Geodynamics · Analog Modeling",
+  "titlePrefix": "Decoding the deformation of",
+  "titleAccent": "rocky worlds",
+  "titleSuffix": ".",
+  "tagline": "Planetary scientist researching the tectonics and geodynamics of terrestrial and icy worlds.",
+  "ledeIntro": "My research focuses on deciphering the tectonic evolution of planets and their habitability.",
+  "ledeBody": "I utilize ground-truth observations from satellite imagery, combined with numerical and analogue modeling approaches, to investigate the endogenic processes that shape planetary bodies. As a geologist, my research objective is to constrain the temporal evolution of endogenic processes and to evaluate the extent to which terrestrial analogues enhance our understanding of the geodynamic and tectonic evolution of other planetary bodies through comparative planetology.",
+  "ctaPrimaryLabel": "Explore research →",
+  "ctaPrimaryHref": "/research/",
+  "ctaGhostLabel": "About me",
+  "ctaGhostHref": "/about",
+  "researchSectionTitle": "Explore my research",
+  "blogSectionTitle": "See what we've written lately"
+}

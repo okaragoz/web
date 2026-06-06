@@ -89,6 +89,115 @@ collections:
           - { name: title, label: Title, widget: string }
           - { name: body, label: Body, widget: markdown }
 
+  # ---------- Page content (home hero, news, publications, research) ----------
+  - name: content
+    label: "Page Content"
+    files:
+      - name: home
+        label: "Home Page"
+        file: "docs/.vitepress/data/home.json"
+        description: "Hero text and the two section titles on the home page."
+        fields:
+          - { name: eyebrow, label: Eyebrow, widget: string }
+          - { name: titlePrefix, label: "Headline — before accent", widget: string }
+          - { name: titleAccent, label: "Headline — accent word(s)", widget: string }
+          - { name: titleSuffix, label: "Headline — after accent", widget: string }
+          - { name: tagline, label: "Tagline (under photo)", widget: text }
+          - { name: ledeIntro, label: "Lede — intro line", widget: text }
+          - { name: ledeBody, label: "Lede — body (muted)", widget: text }
+          - { name: ctaPrimaryLabel, label: "Primary button label", widget: string }
+          - { name: ctaPrimaryHref, label: "Primary button link", widget: string }
+          - { name: ctaGhostLabel, label: "Secondary button label", widget: string }
+          - { name: ctaGhostHref, label: "Secondary button link", widget: string }
+          - { name: researchSectionTitle, label: "Research section title", widget: string }
+          - { name: blogSectionTitle, label: "Blog section title", widget: string }
+      - name: news
+        label: "News Banner"
+        file: "docs/.vitepress/data/news.json"
+        description: "The dismissible announcement banner on the home page."
+        fields:
+          - { name: show, label: "Show the banner", widget: boolean, default: true }
+          - { name: tag, label: "Tag (bold prefix)", widget: string }
+          - { name: text, label: "Message", widget: text }
+          - { name: cta, label: "Button label (empty = no button)", widget: string, required: false }
+          - { name: href, label: "Button link", widget: string, required: false }
+      - name: publications_list
+        label: "Publications List"
+        file: "docs/.vitepress/data/publications.json"
+        description: "The searchable publications table (peer-reviewed + abstracts)."
+        fields:
+          - name: peerReviewed
+            label: "Peer-reviewed Articles"
+            label_singular: "Article"
+            widget: list
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: year, label: Year, widget: string }
+              - { name: venue, label: Journal, widget: string }
+              - { name: url, label: DOI / URL, widget: string }
+          - name: abstracts
+            label: "Conference Abstracts"
+            label_singular: "Abstract"
+            widget: list
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: year, label: Year, widget: string }
+              - { name: venue, label: Conference, widget: string }
+              - { name: url, label: DOI / URL, widget: string }
+      - name: research_content
+        label: "Research Page Content"
+        file: "docs/.vitepress/data/research.json"
+        description: "Topic pills, the three planet panels, in-depth studies, and missions."
+        fields:
+          - { name: topics, label: "Topic pills", widget: list }
+          - name: planets
+            label: "Planet panels"
+            label_singular: "Planet"
+            widget: list
+            fields:
+              - { name: symbol, label: "Symbol (e.g. ♀)", widget: string }
+              - { name: name, label: "Name (Venus/Mars/Ganymede)", widget: string }
+              - { name: accent, label: "Accent colour (hex)", widget: string }
+              - { name: title, label: Title, widget: string }
+              - { name: desc, label: Description, widget: text }
+              - { name: tabs, label: Tabs, widget: list }
+              - name: subtopics
+                label: Subtopics
+                widget: list
+                fields:
+                  - { name: num, label: "Number / label", widget: string }
+                  - { name: title, label: Title, widget: string }
+                  - { name: body, label: Body, widget: text }
+          - name: studies
+            label: "In-depth studies"
+            label_singular: "Study group"
+            widget: list
+            fields:
+              - { name: planet, label: Planet, widget: string }
+              - { name: accent, label: "Accent colour (hex)", widget: string }
+              - { name: intro, label: Intro, widget: text }
+              - name: items
+                label: Studies
+                widget: list
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: body, label: Body, widget: text }
+                  - { name: image, label: Image, widget: image, required: false }
+                  - name: papers
+                    label: Papers
+                    widget: list
+                    fields:
+                      - { name: label, label: Label, widget: string }
+                      - { name: href, label: Link, widget: string }
+          - name: missions
+            label: "Planetary missions"
+            label_singular: "Mission"
+            widget: list
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: org, label: Organisation, widget: string }
+              - { name: desc, label: Description, widget: text }
+
   # ---------- Site menu / navigation ----------
   - name: settings
     label: "Site Settings"

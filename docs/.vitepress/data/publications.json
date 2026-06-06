@@ -1,0 +1,21 @@
+{
+  "peerReviewed": [
+    { "title": "Morphometry and kinematics correlation of wrinkle ridges on Mars: Insights from Trishear modelling", "year": "2025", "venue": "Icarus", "url": "https://doi.org/10.1016/j.icarus.2024.116330" },
+    { "title": "Structural analysis and evolution of large Venusian coronae: Insights from low-angle faults at coronae rims", "year": "2024", "venue": "PSS", "url": "https://doi.org/10.1016/j.pss.2024.105955" },
+    { "title": "Unraveling the Tectonic History of the Tharsis Rise on Mars: Plume Migration and Critical Taper Dome", "year": "2024", "venue": "JGR: Planets", "url": "https://doi.org/10.1029/2023JE007965" },
+    { "title": "Insights into the subsurface structure of wrinkle ridges on Mars", "year": "2022", "venue": "EPSL", "url": "https://doi.org/10.1016/j.epsl.2022.117759" },
+    { "title": "Circum-Tharsis wrinkle ridges at Lunae Planum: Morphometry, formation, and crustal implications.", "year": "2022", "venue": "Icarus", "url": "https://doi.org/10.1016/j.icarus.2021.114808" },
+    { "title": "A study on the morphology and geology of Dulovo crater; Southern Libya Montes, Mars", "year": "2017", "venue": "MJST", "url": "https://doi.org/10.22531/muglajsci.314830" }
+  ],
+  "abstracts": [
+    { "title": "Evidence for very recent tectonic activity in southern Tharsis", "year": "2025", "venue": "EGU", "url": "https://doi.org/10.5194/egusphere-egu25-518" },
+    { "title": "Fault-melt interaction and its implications for Venusian Tectonic regimes in Aphrodite Terra, Venus", "year": "2025", "venue": "EGU", "url": "https://doi.org/10.5194/egusphere-egu25-235" },
+    { "title": "Geodynamics of synconvergent extension on Venus and Earth", "year": "2025", "venue": "EGU", "url": "https://doi.org/10.5194/egusphere-egu25-9519" },
+    { "title": "Insights about Stratigraphy and Composition From Ray and Halo Craters on Ganymede", "year": "2025", "venue": "EGU", "url": "https://doi.org/10.5194/egusphere-egu25-21586" },
+    { "title": "Fault scaling at the Reykjanes Peninsula (Iceland) as a Mars Analogue: Displacement-length relationship in comparison with Memnonia Fossae, Mars", "year": "2024", "venue": "EPSC", "url": "https://doi.org/10.5194/epsc2024-1091" },
+    { "title": "Low-angle faults at the rim of a large Venusian corona", "year": "2024", "venue": "EPSC", "url": "https://doi.org/10.5194/epsc2024-383" },
+    { "title": "Trishear Forward Modelling of WRs on Mars: morphometry and kinematics correlation to unravel Mars geology", "year": "2024", "venue": "EPSC", "url": "https://doi.org/10.5194/epsc2024-888" },
+    { "title": "Structural analyses of Latona Corona and Dali Chasma, Aphrodite Terra, Venus", "year": "2023", "venue": "EnVision Workshop", "url": "https://envisionvenus.eu" },
+    { "title": "Clues to the subsurface fault pattern of circum-Tharsis wrinkle ridges", "year": "2022", "venue": "EPSC", "url": "https://doi.org/10.5194/epsc2022-59" }
+  ]
+}

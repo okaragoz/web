@@ -1,5 +1,7 @@
 <script setup>
 import CardSlider from './CardSlider.vue'
+import home from '../data/home.json'
+// Hero text + section titles edited via the CMS (Home Page) or docs/.vitepress/data/home.json
 
 const socials = [
   { kind: 'bsky',     label: 'Bluesky',        href: 'https://bsky.app/profile/did:plc:ekrrgqi5nlb46m34ogwcytcu', color: '#1185fe' },
@@ -20,9 +22,7 @@ const socials = [
       <!-- Identity card (left) -->
       <div class="ok-hero__card">
         <img class="ok-hero__portrait" src="/images/hero/oguzcan-hero.jpg" alt="Oguzcan Karagoz" />
-        <p class="ok-hero__tagline">
-          Planetary scientist researching the tectonics and geodynamics of terrestrial and icy worlds.
-        </p>
+        <p class="ok-hero__tagline">{{ home.tagline }}</p>
         <div class="ok-hero__contact">
           <a class="ok-hero__email" href="mailto:oguzcan.karagoz@geologie.uni-freiburg.de">oguzcan.karagoz@geologie.uni-freiburg.de</a>
           <p class="ok-hero__addr">
@@ -45,23 +45,16 @@ const socials = [
 
       <!-- Headline (right) -->
       <div class="ok-hero__text">
-        <div class="ok-hero__eyebrow">Planetary Science · Tectonics · Geodynamics · Analog Modeling</div>
+        <div class="ok-hero__eyebrow">{{ home.eyebrow }}</div>
         <h1 class="ok-hero__title">
-          Decoding the deformation of <span class="accent">rocky worlds</span>.
+          {{ home.titlePrefix }} <span class="accent">{{ home.titleAccent }}</span>{{ home.titleSuffix }}
         </h1>
         <p class="ok-hero__lede">
-          My research focuses on deciphering the tectonic evolution of planets and their
-          habitability.<br /><br /><span class="muted">I utilize ground-truth observations from
-          satellite imagery, combined with numerical and analogue modeling approaches, to
-          investigate the endogenic processes that shape planetary bodies. As a geologist,
-          my research objective is to constrain the temporal evolution of endogenic
-          processes and to evaluate the extent to which terrestrial analogues enhance our
-          understanding of the geodynamic and tectonic evolution of other planetary bodies
-          through comparative planetology.</span>
+          {{ home.ledeIntro }}<br /><br /><span class="muted">{{ home.ledeBody }}</span>
         </p>
         <div class="ok-hero__cta">
-          <a class="ok-btn ok-btn--primary" href="/research/">Explore research →</a>
-          <a class="ok-btn ok-btn--ghost" href="/about">About me</a>
+          <a class="ok-btn ok-btn--primary" :href="home.ctaPrimaryHref">{{ home.ctaPrimaryLabel }}</a>
+          <a class="ok-btn ok-btn--ghost" :href="home.ctaGhostHref">{{ home.ctaGhostLabel }}</a>
         </div>
       </div>
     </div>
@@ -73,7 +66,7 @@ const socials = [
   <section class="ok-section">
     <CardSlider category="research">
       <template #title>
-        <h2 class="ok-section__title">Explore my research</h2>
+        <h2 class="ok-section__title">{{ home.researchSectionTitle }}</h2>
       </template>
     </CardSlider>
   </section>
@@ -82,7 +75,7 @@ const socials = [
   <section class="ok-section" style="padding-top:0">
     <CardSlider category="blog">
       <template #title>
-        <h2 class="ok-section__title">See what we've written lately</h2>
+        <h2 class="ok-section__title">{{ home.blogSectionTitle }}</h2>
       </template>
     </CardSlider>
   </section>
