@@ -122,11 +122,11 @@ This work is meant to emphasize both a technical note and a public-facing essay.
 
 ## References
 
-    1. Dante Alighieri. _The Divine Comedy of Dante Alighieri. Volume 1: Inferno_. Translated by Robert M. Durling. Oxford University Press, New York, 1996.
-    2. Gregory K. Golden. _Crisis Management during the Roman Republic: The Role of Political Institutions in Emergencies_. Cambridge University Press, Cambridge, 2013.
-    3. Frederik Juliaan Vervaet. “Dictator.” _Oxford Classical Dictionary_ , 2022. DOI: 10.1093/acrefore/9780199381135.013.2151.
-    4. Peter E. Kloeden and Eckhard Platen. _Numerical Solution of Stochastic Differential Equations_. Springer, Berlin and Heidelberg, 1992. DOI: 10.1007/978-3-662-12616-5.
-    5. Mark Newman. _Networks: An Introduction_. Oxford University Press, Oxford, 2010. DOI: 10.1093/acprof:oso/9780199206650.001.0001.
+1. Dante Alighieri. _The Divine Comedy of Dante Alighieri. Volume 1: Inferno_. Translated by Robert M. Durling. Oxford University Press, New York, 1996.
+2. Gregory K. Golden. _Crisis Management during the Roman Republic: The Role of Political Institutions in Emergencies_. Cambridge University Press, Cambridge, 2013.
+3. Frederik Juliaan Vervaet. “Dictator.” _Oxford Classical Dictionary_ , 2022. DOI: 10.1093/acrefore/9780199381135.013.2151.
+4. Peter E. Kloeden and Eckhard Platen. _Numerical Solution of Stochastic Differential Equations_. Springer, Berlin and Heidelberg, 1992. DOI: 10.1007/978-3-662-12616-5.
+5. Mark Newman. _Networks: An Introduction_. Oxford University Press, Oxford, 2010. DOI: 10.1093/acprof:oso/9780199206650.001.0001.
 
 ## Full Code Block
 
