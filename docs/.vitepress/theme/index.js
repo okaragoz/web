@@ -1,5 +1,5 @@
 import DefaultTheme from 'vitepress/theme'
-import { h } from 'vue'
+import { h, onMounted } from 'vue'
 import Home from './Home.vue'
 import ListCard from './ListCard.vue'
 import PostHeader from './PostHeader.vue'
@@ -39,5 +39,36 @@ export default {
     app.component('Faq', Faq)
     app.component('NewsBanner', NewsBanner)
     app.component('AudioPlayer', AudioPlayer)
+  },
+  setup() {
+    if (import.meta.env.SSR) return
+    onMounted(() => {
+      // Click-to-zoom for post body images (event delegation = survives route changes)
+      document.addEventListener('click', (e) => {
+        const img = e.target
+        if (!(img instanceof HTMLImageElement)) return
+        if (!img.closest('.vp-doc')) return
+        const container = img.closest('.content-container')
+        if (!container || !container.querySelector('.ok-posthead')) return
+
+        const overlay = document.createElement('div')
+        overlay.className = 'ok-zoom-overlay'
+        const big = document.createElement('img')
+        big.src = img.currentSrc || img.src
+        big.alt = img.alt || ''
+        overlay.appendChild(big)
+        document.body.appendChild(overlay)
+        requestAnimationFrame(() => overlay.classList.add('is-open'))
+
+        const close = () => {
+          overlay.classList.remove('is-open')
+          setTimeout(() => overlay.remove(), 200)
+          document.removeEventListener('keydown', onKey)
+        }
+        const onKey = (ev) => { if (ev.key === 'Escape') close() }
+        overlay.addEventListener('click', close)
+        document.addEventListener('keydown', onKey)
+      })
+    })
   },
 }

@@ -825,6 +825,31 @@ h2, h3, h4,
 }
 .ok-posthead__img { aspect-ratio: 16 / 8; border-radius: 18px; width: 100%; }
 .vp-doc img { margin: 0.4rem 0; }
+.vp-doc h3 { font-size: 1.55rem; }
+
+/* Post body images: show at half size, centered, click to enlarge */
+.content-container:has(.ok-posthead) .vp-doc img {
+  max-width: 50%; height: auto; display: block;
+  margin: 1.8rem auto; cursor: zoom-in;
+}
+@media (max-width: 640px) {
+  .content-container:has(.ok-posthead) .vp-doc img { max-width: 100%; }
+}
+
+/* Lightweight click-to-zoom overlay (no dependency) */
+.ok-zoom-overlay {
+  position: fixed; inset: 0; z-index: 2000;
+  display: flex; align-items: center; justify-content: center;
+  padding: 4vh 4vw; background: rgba(10, 12, 16, 0.9);
+  cursor: zoom-out; opacity: 0; transition: opacity .2s ease;
+}
+.ok-zoom-overlay.is-open { opacity: 1; }
+.ok-zoom-overlay img {
+  max-width: 95vw; max-height: 92vh; border-radius: 8px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+  transform: scale(0.97); transition: transform .2s ease;
+}
+.ok-zoom-overlay.is-open img { transform: scale(1); }
 .vp-doc blockquote { margin: 1.6rem 0; font-size: 1.05rem; }
 .vp-doc :not(pre) > code { border-radius: 5px; padding: 0.15em 0.4em; font-size: 0.88em; }
 
