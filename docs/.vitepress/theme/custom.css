@@ -821,7 +821,7 @@ h2, h3, h4,
 .ok-posthead__title {
   font-family: var(--ok-font-display); font-weight: 300;
   font-size: clamp(2.4rem, 5vw, 3.4rem); letter-spacing: -0.035em;
-  line-height: 1.06; color: var(--vp-c-text-1); margin: 0 0 20px;
+  line-height: 1.06; color: var(--vp-c-text-1); margin: 45px 0 65px;
 }
 .ok-posthead__img { aspect-ratio: 16 / 8; border-radius: 18px; width: 100%; }
 .vp-doc img { margin: 0.4rem 0; }
