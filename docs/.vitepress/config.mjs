@@ -123,6 +123,8 @@ export default defineConfig({
   },
 
   themeConfig: {
+    // Navbar wordmark only (page <title> and SEO keep the plain author name)
+    siteTitle: 'Dr. Oguzcan Karagoz',
     nav: menu.nav,
 
     // No left sidebar anywhere — pages use the full-width doc layout and keep
