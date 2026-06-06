@@ -267,10 +267,10 @@ h2, h3, h4,
 }
 .VPNavBarTitle .title {
   font-family: var(--ok-font-display) !important;
-  font-size: 30px;
+  font-size: 38px;
   font-weight: 300 !important;
-  letter-spacing: -0.01em;
-  line-height: 1;
+  letter-spacing: 0.05em;
+  line-height: 2;
 }
 
 /* Nav menu items at 18px */
