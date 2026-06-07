@@ -1,8 +1,9 @@
 <script setup>
-defineProps({ eyebrow: String, title: String, lede: String, bg: String, compact: Boolean, bgContain: Boolean })
+import SectionBand from './SectionBand.vue'
+defineProps({ eyebrow: String, title: String, lede: String, bg: String, compact: Boolean, bgContain: Boolean, animate: Boolean })
 </script>
 <template>
-  <section class="ok-phero" :class="{ 'ok-phero--img': bg, 'ok-phero--compact': compact, 'ok-phero--contain': bgContain }">
+  <section class="ok-phero" :class="{ 'ok-phero--img': bg, 'ok-phero--compact': compact, 'ok-phero--contain': bgContain, 'ok-phero--anim': animate }">
     <div v-if="bg" class="ok-phero__bg" :style="{ backgroundImage: `url(${bg})` }" />
     <div class="ok-phero__glow" />
     <div class="ok-phero__inner">
@@ -12,4 +13,5 @@ defineProps({ eyebrow: String, title: String, lede: String, bg: String, compact:
       <slot />
     </div>
   </section>
+  <SectionBand />
 </template>

@@ -1,21 +1,216 @@
 {
   "peerReviewed": [
-    { "title": "Morphometry and kinematics correlation of wrinkle ridges on Mars: Insights from Trishear modelling", "year": "2025", "venue": "Icarus", "url": "https://doi.org/10.1016/j.icarus.2024.116330" },
-    { "title": "Structural analysis and evolution of large Venusian coronae: Insights from low-angle faults at coronae rims", "year": "2024", "venue": "PSS", "url": "https://doi.org/10.1016/j.pss.2024.105955" },
-    { "title": "Unraveling the Tectonic History of the Tharsis Rise on Mars: Plume Migration and Critical Taper Dome", "year": "2024", "venue": "JGR: Planets", "url": "https://doi.org/10.1029/2023JE007965" },
-    { "title": "Insights into the subsurface structure of wrinkle ridges on Mars", "year": "2022", "venue": "EPSL", "url": "https://doi.org/10.1016/j.epsl.2022.117759" },
-    { "title": "Circum-Tharsis wrinkle ridges at Lunae Planum: Morphometry, formation, and crustal implications.", "year": "2022", "venue": "Icarus", "url": "https://doi.org/10.1016/j.icarus.2021.114808" },
-    { "title": "A study on the morphology and geology of Dulovo crater; Southern Libya Montes, Mars", "year": "2017", "venue": "MJST", "url": "https://doi.org/10.22531/muglajsci.314830" }
+    {
+      "title": "Gravity-driven fold-thrust belt at the Martian dichotomy",
+      "year": "2025",
+      "venue": "Earth and Planetary Science Letters",
+      "url": "https://doi.org/10.1016/j.epsl.2025.119645"
+    },
+    {
+      "title": "Strain Localization Along Aphrodite Terra's Chasmata System, Venus: The Role of Frictional Melting and Fault‐Melt Interaction",
+      "year": "2025",
+      "venue": "Journal of Geophysical Research: Planets",
+      "url": "https://doi.org/10.1029/2025JE008964"
+    },
+    {
+      "title": "Morphometry and kinematics correlation of wrinkle ridges on Mars: Insights from Trishear modelling",
+      "year": "2025",
+      "venue": "Icarus",
+      "url": "https://doi.org/10.1016/j.icarus.2024.116330"
+    },
+    {
+      "title": "Structural analysis and evolution of large Venusian coronae: Insights from low-angle faults at coronae rims",
+      "year": "2024",
+      "venue": "Planetary and Space Science",
+      "url": "https://doi.org/10.1016/j.pss.2024.105955"
+    },
+    {
+      "title": "Unraveling the Tectonic History of the Tharsis Rise on Mars: Plume Migration and Critical Taper Dome",
+      "year": "2024",
+      "venue": "Journal of Geophysical Research: Planets",
+      "url": "https://doi.org/10.1029/2023JE007965"
+    },
+    {
+      "title": "Insights into the subsurface structure of wrinkle ridges on Mars",
+      "year": "2022",
+      "venue": "Earth and Planetary Science Letters",
+      "url": "https://doi.org/10.1016/j.epsl.2022.117759"
+    },
+    {
+      "title": "Circum-Tharsis wrinkle ridges at Lunae Planum: Morphometry, formation, and crustal implications",
+      "year": "2022",
+      "venue": "Icarus",
+      "url": "https://doi.org/10.1016/j.icarus.2021.114808"
+    },
+    {
+      "title": "A STUDY ON THE MORPHOLOGY AND GEOLOGY OF DULOVO CRATER; SOUTHERN LIBYA MONTES, MARS",
+      "year": "2017",
+      "venue": "Mugla Journal of Science and Technology 3 (1), 9-15",
+      "url": ""
+    }
   ],
   "abstracts": [
-    { "title": "Evidence for very recent tectonic activity in southern Tharsis", "year": "2025", "venue": "EGU", "url": "https://doi.org/10.5194/egusphere-egu25-518" },
-    { "title": "Fault-melt interaction and its implications for Venusian Tectonic regimes in Aphrodite Terra, Venus", "year": "2025", "venue": "EGU", "url": "https://doi.org/10.5194/egusphere-egu25-235" },
-    { "title": "Geodynamics of synconvergent extension on Venus and Earth", "year": "2025", "venue": "EGU", "url": "https://doi.org/10.5194/egusphere-egu25-9519" },
-    { "title": "Insights about Stratigraphy and Composition From Ray and Halo Craters on Ganymede", "year": "2025", "venue": "EGU", "url": "https://doi.org/10.5194/egusphere-egu25-21586" },
-    { "title": "Fault scaling at the Reykjanes Peninsula (Iceland) as a Mars Analogue: Displacement-length relationship in comparison with Memnonia Fossae, Mars", "year": "2024", "venue": "EPSC", "url": "https://doi.org/10.5194/epsc2024-1091" },
-    { "title": "Low-angle faults at the rim of a large Venusian corona", "year": "2024", "venue": "EPSC", "url": "https://doi.org/10.5194/epsc2024-383" },
-    { "title": "Trishear Forward Modelling of WRs on Mars: morphometry and kinematics correlation to unravel Mars geology", "year": "2024", "venue": "EPSC", "url": "https://doi.org/10.5194/epsc2024-888" },
-    { "title": "Structural analyses of Latona Corona and Dali Chasma, Aphrodite Terra, Venus", "year": "2023", "venue": "EnVision Workshop", "url": "https://envisionvenus.eu" },
-    { "title": "Clues to the subsurface fault pattern of circum-Tharsis wrinkle ridges", "year": "2022", "venue": "EPSC", "url": "https://doi.org/10.5194/epsc2022-59" }
+    {
+      "title": "Morphological and Spectrophotometric exploitation of JANUS LEGA Dataset: Langrenus impact crater characterization and evolution of the highland \"isthmus\" between Mare Fecunditatis and Mare Tranquillitatis",
+      "year": "2026",
+      "venue": "",
+      "url": "https://doi.org/10.5194/egusphere-2026-1901"
+    },
+    {
+      "title": "From Iceland to Mars: Fault Scaling and Tectonic Insights from an Earth Analogue",
+      "year": "2026",
+      "venue": "EGU General Assembly",
+      "url": "https://doi.org/10.5194/egusphere-egu26-21129"
+    },
+    {
+      "title": "Inventory of young mass wasting events in Mars' Southern Hemisphere: Insights into characterization and formation mechanisms",
+      "year": "2026",
+      "venue": "EGU General Assembly",
+      "url": "https://doi.org/10.5194/egusphere-egu26-533"
+    },
+    {
+      "title": "Morphological and Spectrophotometric Analysis of the Moon Using the JANUS LEGA Dataset: Langrenus Crater and the Highland-Mare Transition",
+      "year": "2026",
+      "venue": "57th Lunar and Planetary Science Conference 3160, 1252",
+      "url": ""
+    },
+    {
+      "title": "Advancing Diversity and Inclusion within Europlanet",
+      "year": "2025",
+      "venue": "EPSC",
+      "url": "https://doi.org/10.5194/epsc-dps2025-2057"
+    },
+    {
+      "title": "Fault Scaling and Tectonic Insights from Reykjanes Peninsula: An Earth Analogue for Martian Extensional Faults",
+      "year": "2025",
+      "venue": "EPSC",
+      "url": "https://doi.org/10.5194/epsc-dps2025-1778"
+    },
+    {
+      "title": "Gravity-driven tectonics at the dichotomy boundary (Mars)",
+      "year": "2025",
+      "venue": "EPSC",
+      "url": "https://doi.org/10.5194/epsc-dps2025-314"
+    },
+    {
+      "title": "Lithospheric Dripping explains Corona Formation on Venus",
+      "year": "2025",
+      "venue": "EPSC",
+      "url": "https://doi.org/10.5194/epsc-dps2025-576"
+    },
+    {
+      "title": "Neo-tectonic activity and indications for fault-melt interaction along Aphrodite Terra´s Chasmata system, Venus.",
+      "year": "2025",
+      "venue": "EPSC",
+      "url": "https://doi.org/10.5194/epsc-dps2025-620"
+    },
+    {
+      "title": "Ray and Halo Impact Crater Formation on Ganymede: Probing Crustal Properties via Z-model and Numerical Simulations",
+      "year": "2025",
+      "venue": "EPSC",
+      "url": "https://doi.org/10.5194/epsc-dps2025-1264"
+    },
+    {
+      "title": "Statistical analysis of fragmentation of the Dark and Light Terrain on Ganymede and possible implications",
+      "year": "2025",
+      "venue": "EPSC",
+      "url": "https://doi.org/10.5194/epsc-dps2025-954"
+    },
+    {
+      "title": "The low-friction and viscous detachments drive deformation on Mars",
+      "year": "2025",
+      "venue": "EPSC",
+      "url": "https://doi.org/10.5194/epsc-dps2025-1680"
+    },
+    {
+      "title": "Evidence for very recent tectonic activity in southern Tharsis",
+      "year": "2025",
+      "venue": "EGU General Assembly",
+      "url": "https://doi.org/10.5194/egusphere-egu25-518"
+    },
+    {
+      "title": "Fault-melt interaction and its implications for Venusian Tectonic regimes in Aphrodite Terra, Venus",
+      "year": "2025",
+      "venue": "EGU General Assembly",
+      "url": "https://doi.org/10.5194/egusphere-egu25-235"
+    },
+    {
+      "title": "Geodynamics of synconvergent extension on Venus and earth",
+      "year": "2025",
+      "venue": "EGU General Assembly",
+      "url": "https://doi.org/10.5194/egusphere-egu25-9519"
+    },
+    {
+      "title": "Insights about Stratigraphy and Composition From Ray and Halo Craters on Ganymede",
+      "year": "2025",
+      "venue": "EGU General Assembly",
+      "url": "https://doi.org/10.5194/egusphere-egu25-21586"
+    },
+    {
+      "title": "Fault scaling at the Reykjanes Peninsula (Iceland) as a Mars Analogue: Displacement-length relationship in comparison with Memnonia Fossae, Mars",
+      "year": "2024",
+      "venue": "EPSC",
+      "url": "https://doi.org/10.5194/epsc2024-1091"
+    },
+    {
+      "title": "Low-angle faults at the rim of a large Venusian corona",
+      "year": "2024",
+      "venue": "EPSC",
+      "url": "https://doi.org/10.5194/epsc2024-383"
+    },
+    {
+      "title": "Trishear Forward Modelling of WRs on Mars: morphometry and kinematics correlation to unravel Mars geology",
+      "year": "2024",
+      "venue": "EPSC",
+      "url": "https://doi.org/10.5194/epsc2024-888"
+    },
+    {
+      "title": "Unveiling the tectonic history of Tharsis insights from wrinkle ridges: multi-stage tectonic activity and critical taper dome",
+      "year": "2024",
+      "venue": "EPSC",
+      "url": "https://doi.org/10.5194/epsc2024-358"
+    },
+    {
+      "title": "Clues to the subsurface fault pattern of circum-Tharsis wrinkle ridges",
+      "year": "2022",
+      "venue": "EPSC2022",
+      "url": ""
+    },
+    {
+      "title": "Young stress markers of plume induced compressional stresses on Mars",
+      "year": "2022",
+      "venue": "44th COSPAR Scientific Assembly. Held 16-24 July 44, 398",
+      "url": ""
+    },
+    {
+      "title": "Insights into Circum-Tharsis Wrinkle Ridges",
+      "year": "2022",
+      "venue": "53rd Lunar and Planetary Science Conference 2678, 1032",
+      "url": ""
+    },
+    {
+      "title": "Geodynamic Evolution of Wrinkle Ridges and Rate of Crustal Shortening on Lunae Planum, Mars",
+      "year": "2018",
+      "venue": "European Planetary Science Congress, EPSC2018-1009",
+      "url": ""
+    },
+    {
+      "title": "Feather feature orientations in shocked granitic rocks of Chicxulub's peak ring",
+      "year": "2018",
+      "venue": "EGU General Assembly Conference Abstracts, 13255",
+      "url": ""
+    },
+    {
+      "title": "Structural Mapping of Granitoids in the Peak Ring of the Chicxulub Crater: Damage Distribution and Block Sizes",
+      "year": "2018",
+      "venue": "49th Annual Lunar and Planetary Science Conference, 2009",
+      "url": ""
+    },
+    {
+      "title": "Chronology of wrinkle ridge formation and rate of crustal shortening on Lunae Planum, Mars",
+      "year": "2017",
+      "venue": "EGU General Assembly Conference Abstracts, 1530",
+      "url": ""
+    }
   ]
 }

@@ -9,6 +9,38 @@
    so sticky/fixed still work) prevents any stray horizontal scroll. */
 html { overflow-x: clip; }
 
+/* Decorative section band — the .ok-news gradient look, without text */
+.ok-band {
+  position: relative; isolation: isolate; overflow: hidden;
+  width: 100vw; margin-left: calc(50% - 50vw);
+  height: 120px;
+  background: var(--vp-c-bg-soft);
+  border-top: 1px solid var(--vp-c-divider);
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+.ok-band__blob { position: absolute; top: 50%; transform: translateY(-50%); filter: blur(46px); pointer-events: none; }
+.ok-band__blob--l { left: max(-9rem, calc(50% - 54rem)); }
+.ok-band__blob--r { left: max(42rem, calc(50% + 6rem)); }
+.ok-band__blob span {
+  display: block; width: 40rem; aspect-ratio: 577/310; opacity: 0.30;
+  clip-path: polygon(74.8% 41.9%, 97.2% 73.2%, 100% 34.9%, 92.5% 0.4%, 87.5% 0%, 75% 28.6%, 58.5% 54.6%, 50.1% 56.8%, 46.9% 44%, 48.3% 17.4%, 24.7% 53.9%, 0% 27.9%, 11.9% 74.2%, 24.9% 54.1%, 68.6% 100%, 74.8% 41.9%);
+  background: linear-gradient(to right, #a3bded, #9089fc);
+}
+@media (max-width: 640px) { .ok-band { height: 80px; } }
+
+/* About hero — gentle vertical pan of the background image */
+.ok-phero--anim .ok-phero__bg {
+  background-size: cover;
+  animation: ok-phero-pan 22s ease-in-out infinite alternate;
+}
+@keyframes ok-phero-pan {
+  from { background-position: center top; }
+  to   { background-position: center bottom; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ok-phero--anim .ok-phero__bg { animation: none; }
+}
+
 /* 404 — page not found */
 .ok-404 {
   min-height: 62vh; display: flex; align-items: center; justify-content: center;
