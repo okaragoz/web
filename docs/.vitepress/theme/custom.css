@@ -13,7 +13,7 @@ html { overflow-x: clip; }
 .ok-band {
   position: relative; isolation: isolate; overflow: hidden;
   width: 100vw; margin-left: calc(50% - 50vw);
-  height: 120px;
+  height: 60px;
   background: var(--vp-c-bg-soft);
   border-top: 1px solid var(--vp-c-divider);
   border-bottom: 1px solid var(--vp-c-divider);
@@ -26,7 +26,7 @@ html { overflow-x: clip; }
   clip-path: polygon(74.8% 41.9%, 97.2% 73.2%, 100% 34.9%, 92.5% 0.4%, 87.5% 0%, 75% 28.6%, 58.5% 54.6%, 50.1% 56.8%, 46.9% 44%, 48.3% 17.4%, 24.7% 53.9%, 0% 27.9%, 11.9% 74.2%, 24.9% 54.1%, 68.6% 100%, 74.8% 41.9%);
   background: linear-gradient(to right, #a3bded, #9089fc);
 }
-@media (max-width: 640px) { .ok-band { height: 80px; } }
+@media (max-width: 640px) { .ok-band { height: 48px; } }
 
 /* About hero — gentle vertical pan of the background image */
 .ok-phero--anim .ok-phero__bg {
