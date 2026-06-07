@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import posts from '../data/posts.json'
 
 const props = defineProps({
@@ -13,6 +13,7 @@ const items = computed(() => {
   return props.limit > 0 ? l.slice(0, props.limit) : l
 })
 
+const root = ref(null)
 const track = ref(null)
 function scrollByCards(dir) {
   const el = track.value
@@ -20,6 +21,21 @@ function scrollByCards(dir) {
   // page by a full viewport so only whole cards are ever shown
   el.scrollBy({ left: dir * el.clientWidth, behavior: 'smooth' })
 }
+
+// Apple-style scroll reveal: cards fade + slide in from the right, staggered,
+// when the slider scrolls into view. Respects prefers-reduced-motion.
+onMounted(() => {
+  const el = root.value
+  if (!el) return
+  const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  if (reduce) { el.classList.add('is-in'); return }
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) { el.classList.add('is-in'); obs.disconnect() }
+    })
+  }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' })
+  obs.observe(el)
+})
 
 function fmt(d) {
   if (!d) return ''
@@ -29,7 +45,7 @@ function fmt(d) {
 </script>
 
 <template>
-<div class="ok-slider">
+<div class="ok-slider" ref="root">
   <div class="ok-slider__head">
     <div class="ok-slider__title"><slot name="title" /></div>
     <div class="ok-slider__nav">
@@ -43,16 +59,18 @@ function fmt(d) {
   </div>
 
   <div class="ok-slider__track" ref="track">
-    <a v-for="p in items" :key="p.slug" :href="p.url" class="ok-bigcard">
-      <div class="ok-bigcard__frame">
-        <div class="ok-bigcard__media">
-          <img v-if="p.image" :src="p.image" :alt="p.title" loading="lazy" />
-          <div v-else class="ok-bigcard__ph">◐</div>
+    <a v-for="(p, i) in items" :key="p.slug" :href="p.url" class="ok-bigcard" :style="{ '--i': i }">
+      <div class="ok-bigcard__card">
+        <div class="ok-bigcard__frame">
+          <div class="ok-bigcard__media">
+            <img v-if="p.image" :src="p.image" :alt="p.title" loading="lazy" />
+            <div v-else class="ok-bigcard__ph">◐</div>
+          </div>
         </div>
-      </div>
-      <div class="ok-bigcard__body">
-        <h3 class="ok-bigcard__title">{{ p.title }}</h3>
-        <span class="ok-bigcard__read">{{ p.readingTime || 5 }} min read</span>
+        <div class="ok-bigcard__body">
+          <h3 class="ok-bigcard__title">{{ p.title }}</h3>
+          <span class="ok-bigcard__read">{{ p.readingTime || 5 }} min read</span>
+        </div>
       </div>
     </a>
   </div>
@@ -91,27 +109,37 @@ function fmt(d) {
 }
 .ok-slider__track::-webkit-scrollbar { display: none; }
 
-/* Big editorial card */
+/* Card = layout + scroll-reveal container (transform/opacity only here) */
 .ok-bigcard {
-  /* exactly 3 whole cards per view (gap 28px → 2 gaps) — no sliced cards */
   flex: 0 0 calc((100% - 56px) / 3); max-width: calc((100% - 56px) / 3);
   scroll-snap-align: start;
   text-decoration: none !important;
-  display: flex; flex-direction: column;
-  transition: transform .25s cubic-bezier(.2,.7,.3,1);
+  display: flex;
+  /* Apple-style reveal: start offset to the right + faded, settle into place */
+  opacity: 0; transform: translate3d(46px, 0, 0);
+  transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
+  transition-delay: calc(var(--i) * 0.09s);   /* accumulated stagger, settling left after right */
 }
+.ok-slider.is-in .ok-bigcard { opacity: 1; transform: translate3d(0, 0, 0); }
 @media (max-width: 1024px) {
   .ok-bigcard { flex-basis: calc((100% - 28px) / 2); max-width: calc((100% - 28px) / 2); }
 }
-.ok-bigcard:hover { transform: translateY(-6px); }
-/* Card shell: image in a soft inset panel, then title + reading time */
-.ok-bigcard {
+
+/* Card chrome + hover lift live on an inner element so the lift never fights
+   the reveal transform above */
+.ok-bigcard__card {
+  display: flex; flex-direction: column; height: 100%;
   background: var(--vp-c-bg-alt); border: 1px solid var(--vp-c-border);
   border-radius: 18px; overflow: hidden;
   box-shadow: 0 6px 20px -12px rgba(22,24,29,0.22), 0 2px 6px -4px rgba(22,24,29,0.10);
+  transition: transform .28s cubic-bezier(.2,.7,.3,1), box-shadow .28s ease;
 }
-.ok-bigcard:hover { box-shadow: 0 18px 38px -16px rgba(22,24,29,0.28), 0 4px 12px -6px rgba(22,24,29,0.14); }
-:global(.dark) .ok-bigcard { box-shadow: 0 10px 28px -14px rgba(0,0,0,0.6); }
+.ok-bigcard:hover .ok-bigcard__card {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 38px -16px rgba(22,24,29,0.28), 0 4px 12px -6px rgba(22,24,29,0.14);
+}
+:global(.dark) .ok-bigcard__card { box-shadow: 0 10px 28px -14px rgba(0,0,0,0.6); }
+
 .ok-bigcard__frame { background: var(--vp-c-bg-soft); padding: 1.5rem; }
 .ok-bigcard__media {
   position: relative; aspect-ratio: 4 / 3; overflow: hidden;
@@ -138,5 +166,8 @@ function fmt(d) {
 @media (max-width: 640px) {
   .ok-bigcard { flex-basis: 82vw; max-width: 82vw; }
   .ok-bigcard__title { font-size: 1.2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ok-bigcard { opacity: 1; transform: none; transition: none; }
 }
 </style>

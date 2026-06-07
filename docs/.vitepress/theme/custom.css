@@ -430,8 +430,7 @@ h2, h3, h4,
   font-family: var(--ok-font-display);
   font-size: clamp(2.4rem, 5.2vw, 4.1rem);
   line-height: 1.05; letter-spacing: -0.035em; font-weight: 300;
-  color: #ffffff; max-width: 16ch; margin: 0 0 1.6rem;
-  text-wrap: balance;
+  color: #ffffff; max-width: 20ch; margin: 0 0 1.6rem;
   opacity: 0; animation: ok-rise .7s .12s forwards;
 }
 .ok-hero__title .accent {

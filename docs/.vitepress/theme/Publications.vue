@@ -108,30 +108,33 @@ function setTab(t) {
 }
 .ok-pubs__search::placeholder { color: var(--vp-c-text-3); }
 
-/* Table */
+/* Table — clean, modern rows (Tailwind-style) */
 .ok-pubs__table { width: 100%; border-collapse: collapse; }
 .ok-pubs__table thead th {
-  text-align: left; padding: 0.55rem 0.85rem;
-  font-family: var(--ok-font-bold); font-weight: 600; font-size: 0.95rem;
+  text-align: left; padding: 0 1rem 0.8rem;
+  font-family: var(--ok-font-bold); font-weight: 600; font-size: 0.82rem;
   color: var(--vp-c-text-1);
   border-bottom: 1px solid var(--vp-c-divider);
 }
-.ok-pubs__table th:nth-child(1), .ok-pubs__table td:nth-child(1) { width: 66%; }
-.ok-pubs__table th:nth-child(2), .ok-pubs__table td:nth-child(2) { width: 10%; }
-.ok-pubs__table th:nth-child(3), .ok-pubs__table td:nth-child(3) { width: 24%; }
+.ok-pubs__table th:nth-child(1), .ok-pubs__table td:nth-child(1) { width: 62%; }
+.ok-pubs__table th:nth-child(2), .ok-pubs__table td:nth-child(2) { width: 11%; }
+.ok-pubs__table th:nth-child(3), .ok-pubs__table td:nth-child(3) { width: 27%; }
 .ok-pubs__table td {
-  padding: 0.55rem 0.85rem; vertical-align: top;
+  padding: 1.05rem 1rem; vertical-align: middle;
   border-bottom: 1px solid var(--vp-c-divider);
-  color: var(--vp-c-text-2); font-size: 0.95rem;
+  color: var(--vp-c-text-3); font-size: 0.92rem;
 }
+.ok-pubs__table tbody tr { transition: background .15s ease; }
 .ok-pubs__table tbody tr:hover { background: var(--vp-c-bg-soft); }
+.ok-pubs__year { color: var(--vp-c-text-3); white-space: nowrap; }
+.ok-pubs__venue { color: var(--vp-c-text-3); }
 .ok-pubs__title a {
   color: var(--vp-c-text-1); text-decoration: none;
-  font-size: 1rem; font-weight: 500; line-height: 1.4;
+  font-size: 0.98rem; font-weight: 600; line-height: 1.45;
 }
-.ok-pubs__title a:hover { color: var(--ok-accent-deep); text-decoration: underline; }
+.ok-pubs__title a:hover { color: var(--ok-accent-deep); }
 .dark .ok-pubs__title a:hover { color: var(--ok-accent-a); }
-.ok-pubs__empty { text-align: center; color: var(--vp-c-text-3); font-style: italic; }
+.ok-pubs__empty { text-align: center; color: var(--vp-c-text-3); font-style: italic; padding: 2rem; }
 
 @media (max-width: 640px) {
   .ok-pubs__table th:nth-child(1), .ok-pubs__table td:nth-child(1) { width: auto; }

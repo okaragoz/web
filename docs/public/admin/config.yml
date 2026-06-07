@@ -63,10 +63,9 @@ collections:
       - { name: layout, label: Layout, widget: hidden, default: post }
       - { name: body, label: Body, widget: markdown }
 
-  # ---------- Standalone pages (About, Publications) ----------
+  # ---------- Pages (one place: page content + the About markdown) ----------
   - name: pages
     label: "Pages"
-    label_singular: "Page"
     files:
       - name: about
         label: "About"
@@ -75,22 +74,9 @@ collections:
           - { name: title, label: Title, widget: string }
           - { name: layout, label: Layout, widget: hidden, default: page }
           - { name: body, label: Body, widget: markdown }
-      - name: publications
-        label: "Publications"
-        file: "docs/publications.md"
-        fields:
-          - { name: title, label: Title, widget: string }
-          - { name: layout, label: Layout, widget: hidden, default: page }
-          - { name: body, label: Body, widget: markdown }
-      # NB: docs/research/index.md is intentionally NOT a file entry here — it sits
-      # inside the "research" folder collection, and listing it in both places makes
-      # Sveltia build a commit with the same path twice (GitHub rejects it). Edit the
-      # research overview content via "Page Content → Research Page Content" instead.
-
-  # ---------- Page content (home hero, news, publications, research) ----------
-  - name: content
-    label: "Page Content"
-    files:
+      # NB: research/index.md and publications.md just render Vue components; their
+      # editable content is the JSON entries below (not markdown files). Listing one
+      # file in two collections breaks Sveltia saves, so they are not file entries.
       - name: home
         label: "Home Page"
         file: "docs/.vitepress/data/home.json"
@@ -147,6 +133,14 @@ collections:
         file: "docs/.vitepress/data/research.json"
         description: "Topic pills, the three planet panels, in-depth studies, and missions."
         fields:
+          - name: hero
+            label: "Hero (top banner)"
+            widget: object
+            fields:
+              - { name: eyebrow, label: Eyebrow, widget: string }
+              - { name: title, label: Title, widget: string }
+              - { name: lede, label: Lede, widget: text }
+              - { name: bg, label: "Background image", widget: image, required: false }
           - { name: topics, label: "Topic pills", widget: list }
           - name: planets
             label: "Planet panels"

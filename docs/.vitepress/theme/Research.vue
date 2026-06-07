@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import researchData from '../data/research.json'
+import PageHero from './PageHero.vue'
 
 const root = ref(null)
 let rafs = []
@@ -10,6 +11,7 @@ const REDUCE = typeof window !== 'undefined' && window.matchMedia
   && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
 /* ── Research content (edited via CMS / docs/.vitepress/data/research.json) ── */
+const hero = researchData.hero
 const topics = researchData.topics
 const planets = researchData.planets
 const studies = researchData.studies
@@ -323,6 +325,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
+<PageHero :eyebrow="hero.eyebrow" :title="hero.title" :lede="hero.lede" :bg="hero.bg" />
 <section class="ok-research" ref="root">
 
   <div class="ok-reveal">

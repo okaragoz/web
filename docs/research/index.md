@@ -5,10 +5,4 @@ aside: false
 pageClass: ok-research-page
 ---
 
-<PageHero
-  eyebrow="Planetary Science · Tectonics · Geodynamics"
-  title="Research"
-  bg="/images/hero/research-bg.jpg"
-  lede="I investigate tectonic and geodynamic processes on Venus, Mars, and Ganymede through satellite-based geological mapping, analogue experiments, and numerical modelling." />
-
 <Research />
