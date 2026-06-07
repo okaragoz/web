@@ -10,7 +10,7 @@ pageClass: ok-wide
   title="About"
   bg="/images/hero/about-bg.jpg"
   animate
-  lede="I study the structural geology and tectonics of rocky worlds, reconstructing how Mars, Venus, and the icy moons have deformed over billions of years." />
+  lede="I investigate the structural geology and tectonics of rocky worlds, reconstructing how Mars, Venus, and the icy moons have deformed over billions of years." />
 
 <div class="ok-about">
   <div class="ok-about__text">

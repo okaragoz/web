@@ -13,11 +13,13 @@ html { overflow-x: clip; }
 .ok-band {
   position: relative; isolation: isolate; overflow: hidden;
   width: 100vw; margin-left: calc(50% - 50vw);
-  height: 60px;
+  height: 60px; margin-bottom: 35px;
   background: var(--vp-c-bg-soft);
   border-top: 1px solid var(--vp-c-divider);
   border-bottom: 1px solid var(--vp-c-divider);
 }
+/* the footer band stays flush against the footer (no trailing gap) */
+.ok-band:has(+ .ok-footer) { margin-bottom: 0; }
 .ok-band__blob { position: absolute; top: 50%; transform: translateY(-50%); filter: blur(46px); pointer-events: none; }
 .ok-band__blob--l { left: max(-9rem, calc(50% - 54rem)); }
 .ok-band__blob--r { left: max(42rem, calc(50% + 6rem)); }
@@ -274,7 +276,7 @@ h2, h3, h4,
   color: #ffffff; margin: 0; padding: 0; border: none; text-align: center;
 }
 .ok-phero .ok-phero__lede {
-  font-size: 1.18rem; line-height: 1.7; color: #b3b8c4;
+  font-size: 1.18rem; line-height: 1.7; color: #b9bbc1;
   max-width: 60ch; margin: 1.3rem auto 0; text-align: center;
 }
 .ok-phero .ok-phero__note {
@@ -428,7 +430,8 @@ h2, h3, h4,
   font-family: var(--ok-font-display);
   font-size: clamp(2.4rem, 5.2vw, 4.1rem);
   line-height: 1.05; letter-spacing: -0.035em; font-weight: 300;
-  color: #ffffff; max-width: 20ch; margin: 0 0 1.6rem;
+  color: #ffffff; max-width: 16ch; margin: 0 0 1.6rem;
+  text-wrap: balance;
   opacity: 0; animation: ok-rise .7s .12s forwards;
 }
 .ok-hero__title .accent {
@@ -833,7 +836,7 @@ h2, h3, h4,
    Articles (blog / research posts) — clean & professional
    =========================================================== */
 .vp-doc { line-height: 1.75; }
-.vp-doc h1 { font-size: 3.1rem; line-height: 1.05; margin-bottom: 0.6rem; }
+.vp-doc h1 { font-size: 3.1rem; line-height: 1.05; margin-bottom: 2.8rem; }
 .vp-doc h2 { letter-spacing: -0.03em; }
 
 /* All page headings centred */

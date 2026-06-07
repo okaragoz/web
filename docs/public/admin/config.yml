@@ -82,12 +82,10 @@ collections:
           - { name: title, label: Title, widget: string }
           - { name: layout, label: Layout, widget: hidden, default: page }
           - { name: body, label: Body, widget: markdown }
-      - name: research_page
-        label: "Research (overview page)"
-        file: "docs/research/index.md"
-        fields:
-          - { name: title, label: Title, widget: string }
-          - { name: body, label: Body, widget: markdown }
+      # NB: docs/research/index.md is intentionally NOT a file entry here — it sits
+      # inside the "research" folder collection, and listing it in both places makes
+      # Sveltia build a commit with the same path twice (GitHub rejects it). Edit the
+      # research overview content via "Page Content → Research Page Content" instead.
 
   # ---------- Page content (home hero, news, publications, research) ----------
   - name: content

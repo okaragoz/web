@@ -9,6 +9,6 @@ pageClass: ok-research-page
   eyebrow="Planetary Science · Tectonics · Geodynamics"
   title="Research"
   bg="/images/hero/research-bg.jpg"
-  lede="I study tectonic and geodynamic processes on Venus, Mars, and Ganymede through satellite-based geological mapping, analogue experiments, and numerical modelling." />
+  lede="I investigate tectonic and geodynamic processes on Venus, Mars, and Ganymede through satellite-based geological mapping, analogue experiments, and numerical modelling." />
 
 <Research />
