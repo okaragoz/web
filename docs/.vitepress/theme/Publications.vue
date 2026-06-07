@@ -137,7 +137,19 @@ function setTab(t) {
 .ok-pubs__empty { text-align: center; color: var(--vp-c-text-3); font-style: italic; padding: 2rem; }
 
 @media (max-width: 640px) {
-  .ok-pubs__table th:nth-child(1), .ok-pubs__table td:nth-child(1) { width: auto; }
   .ok-pubs__tab { font-size: 1rem; }
+  /* Stack each row into a clean card: title, then "year · venue" meta line */
+  .ok-pubs__table thead { display: none; }
+  .ok-pubs__table, .ok-pubs__table tbody { display: block; width: 100%; }
+  .ok-pubs__table tr {
+    display: block; padding: 0.95rem 0.2rem;
+    border-bottom: 1px solid var(--vp-c-divider);
+  }
+  .ok-pubs__table tbody tr:hover { background: transparent; }
+  .ok-pubs__table td { display: inline; border: none; padding: 0; font-size: 0.85rem; }
+  .ok-pubs__title { display: block !important; margin-bottom: 0.35rem; width: auto; }
+  .ok-pubs__title a { font-size: 1rem; }
+  .ok-pubs__year::after { content: ' · '; color: var(--vp-c-text-3); }
+  .ok-pubs__empty { display: block; }
 }
 </style>
