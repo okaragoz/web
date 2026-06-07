@@ -214,7 +214,7 @@ h2, h3, h4,
      (calc keeps the layout box flush to the viewport, so it adds no
      horizontal overflow on mobile — unlike a translateX breakout) */
   width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
-  margin-top: -48px; margin-bottom: 3.5rem;
+  margin-top: -48px; margin-bottom: 0;
   padding: 5rem 0 4.5rem; text-align: center;
 }
 @media (max-width: 767px) { .ok-phero { margin-top: -32px; padding: 3.5rem 0 3rem; } }
@@ -680,7 +680,7 @@ h2, h3, h4,
 .ok-footer {
   background: #14161c;
   color: #b3b8c4;
-  margin-top: 4rem;
+  margin-top: 0;
   position: relative; overflow: hidden;
 }
 /* Moon image as a subtle backdrop, darkened so footer text stays readable */
