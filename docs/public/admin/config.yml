@@ -141,7 +141,6 @@ collections:
               - { name: title, label: Title, widget: string }
               - { name: lede, label: Lede, widget: text }
               - { name: bg, label: "Background image", widget: image, required: false }
-          - { name: topics, label: "Topic pills", widget: list }
           - name: planets
             label: "Planet panels"
             label_singular: "Planet"
@@ -152,7 +151,6 @@ collections:
               - { name: accent, label: "Accent colour (hex)", widget: string }
               - { name: title, label: Title, widget: string }
               - { name: desc, label: Description, widget: text }
-              - { name: tabs, label: Tabs, widget: list }
               - name: subtopics
                 label: Subtopics
                 widget: list

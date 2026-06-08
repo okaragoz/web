@@ -12,7 +12,6 @@ const REDUCE = typeof window !== 'undefined' && window.matchMedia
 
 /* ── Research content (edited via CMS / docs/.vitepress/data/research.json) ── */
 const hero = researchData.hero
-const topics = researchData.topics
 const planets = researchData.planets
 const studies = researchData.studies
 const missions = researchData.missions
@@ -302,20 +301,15 @@ onMounted(() => {
       setTimeout(() => node.classList.add('ok-in'), d + 60)
     } else obs.observe(node)
   })
-
-  // tab activation
-  el.querySelectorAll('.ok-tab').forEach((tab) => {
-    tab.addEventListener('click', () => {
-      const row = tab.closest('.ok-tabs')
-      row.querySelectorAll('.ok-tab').forEach((tt) => {
-        tt.classList.remove('ok-active'); tt.style.color = ''; tt.style.borderBottomColor = ''
-      })
-      tab.classList.add('ok-active')
-      const c = tab.style.getPropertyValue('--c') || '#0d0d0d'
-      tab.style.color = c; tab.style.borderBottomColor = c
-    })
-  })
 })
+
+// Smooth-scroll the planet quick-nav to each planet section (offset for the fixed navbar)
+function scrollToPlanet(name) {
+  const elp = document.getElementById('ok-' + name.toLowerCase())
+  if (!elp) return
+  const y = elp.getBoundingClientRect().top + window.scrollY - 100
+  window.scrollTo({ top: y, behavior: 'smooth' })
+}
 
 onBeforeUnmount(() => {
   rafs.forEach((id) => cancelAnimationFrame(id))
@@ -330,7 +324,10 @@ onBeforeUnmount(() => {
 
   <div class="ok-reveal">
     <div class="ok-topics ok-topics--top">
-      <span v-for="t in topics" :key="t" class="ok-topic-pill">{{ t }}</span>
+      <a v-for="p in planets" :key="p.name" :href="'#ok-' + p.name.toLowerCase()"
+         class="ok-topic-pill ok-topic-pill--nav" @click.prevent="scrollToPlanet(p.name)">
+        <span class="ok-topic-pill__sym" :style="{ color: p.accent }">{{ p.symbol }}</span> {{ p.name }}
+      </a>
     </div>
   </div>
 
@@ -343,9 +340,6 @@ onBeforeUnmount(() => {
         <span class="ok-planet-tag" :style="{ color: p.accent }">{{ p.symbol }} &nbsp;{{ p.name }}</span>
         <h3 class="ok-planet__title">{{ p.title }}</h3>
         <p class="ok-planet__desc">{{ p.desc }}</p>
-        <div class="ok-tabs">
-          <button v-for="(tb, ti) in p.tabs" :key="tb" class="ok-tab" :class="{ 'ok-active': ti === 0 }" :style="{ '--c': p.accent }">{{ tb }}</button>
-        </div>
       </div>
     </div>
     <div class="ok-subtopics">
@@ -520,6 +514,8 @@ onBeforeUnmount(() => {
   background: var(--vp-c-bg-soft); transform: translateY(-1px);
 }
 :global(.dark) .ok-topic-pill:hover { color: var(--ok-accent-a); }
+.ok-topic-pill--nav { text-decoration: none !important; cursor: pointer; }
+.ok-topic-pill__sym { font-size: 1.05em; line-height: 1; margin-right: 1px; }
 
 .ok-planet {
   padding-bottom: 80px; margin-bottom: 80px;
