@@ -18,8 +18,16 @@ const track = ref(null)
 function scrollByCards(dir) {
   const el = track.value
   if (!el) return
-  // page by a full viewport so only whole cards are ever shown
-  el.scrollBy({ left: dir * el.clientWidth, behavior: 'smooth' })
+  const maxLeft = el.scrollWidth - el.clientWidth
+  // loop: at the end going forward → back to start; at the start going back → jump to end
+  if (dir > 0 && el.scrollLeft >= maxLeft - 4) {
+    el.scrollTo({ left: 0, behavior: 'smooth' })
+  } else if (dir < 0 && el.scrollLeft <= 4) {
+    el.scrollTo({ left: maxLeft, behavior: 'smooth' })
+  } else {
+    // page by a full viewport so only whole cards are ever shown
+    el.scrollBy({ left: dir * el.clientWidth, behavior: 'smooth' })
+  }
 }
 
 // Apple-style scroll reveal: cards fade + slide in from the right, staggered,
@@ -27,13 +35,15 @@ function scrollByCards(dir) {
 onMounted(() => {
   const el = root.value
   if (!el) return
+  const reveal = () => el.classList.add('is-in')
   const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  if (reduce) { el.classList.add('is-in'); return }
+  if (reduce) { reveal(); return }
+  // Safety net: never leave the cards hidden if the observer never fires
+  const fallback = setTimeout(reveal, 1400)
+  if (!('IntersectionObserver' in window)) { reveal(); clearTimeout(fallback); return }
   const obs = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) { el.classList.add('is-in'); obs.disconnect() }
-    })
-  }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' })
+    if (entries.some((e) => e.isIntersecting)) { reveal(); clearTimeout(fallback); obs.disconnect() }
+  }, { threshold: 0.1 })
   obs.observe(el)
 })
 

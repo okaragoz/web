@@ -539,6 +539,9 @@ onBeforeUnmount(() => {
 
 canvas.ok-canvas {
   width: 100%; display: block; border-radius: 12px;
+  /* match the bitmap aspect (1040×620) so the planet never squishes,
+     even before the resize handler runs (this was blank on mobile) */
+  aspect-ratio: 1040 / 620; height: auto;
   box-shadow: 0 4px 24px rgba(0,0,0,.07), 0 1px 4px rgba(0,0,0,.05);
 }
 

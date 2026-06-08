@@ -64,6 +64,8 @@ function toggle(i) { open.value = open.value === i ? -1 : i }
 @media (max-width: 820px) { .ok-faq { grid-template-columns: 1fr; gap: 2rem; } }
 
 .ok-faq__intro { position: sticky; top: 96px; }
+/* on one column (mobile) the intro must NOT be sticky, or the list scrolls over it */
+@media (max-width: 820px) { .ok-faq__intro { position: static; top: auto; } }
 .ok-faq__label {
   font-family: var(--vp-font-family-mono); font-size: 0.8rem;
   letter-spacing: 0.12em; text-transform: uppercase; color: var(--vp-c-text-3);
