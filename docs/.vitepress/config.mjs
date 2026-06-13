@@ -52,9 +52,9 @@ export default defineConfig({
       rel: 'stylesheet',
       href: 'https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap'
     }],
-    ['link', { rel: 'icon', href: '/favicon.ico', sizes: 'any' }],
-    ['link', { rel: 'icon', type: 'image/png', href: '/favicon-32.png' }],
-    ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
+    ['link', { rel: 'icon', href: '/favicon.ico?v=3', sizes: 'any' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/favicon-32.png?v=3' }],
+    ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png?v=3' }],
     ['meta', { name: 'author', content: AUTHOR }],
     ['meta', { name: 'theme-color', content: '#0e1014' }],
     ['meta', { name: 'robots', content: 'index, follow' }],
