@@ -27,6 +27,24 @@ const decodeEntities = (s) =>
     .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&nbsp;/g, ' ')
     .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n)).trim()
 
+// Some sources (e.g. Scholar) hand back SHOUTING ALL-CAPS titles. Detect those
+// and convert to Title Case (minor words lowercased) so they don't yell on the page.
+const SMALL_WORDS = new Set(['a','an','and','as','at','but','by','for','from','in','of','on','or','the','to','vs','via','with'])
+const fixCaps = (title) => {
+  const t = decodeEntities(title)
+  const letters = t.replace(/[^A-Za-z]/g, '')
+  if (!letters) return t
+  const upperRatio = (t.match(/[A-Z]/g) || []).length / letters.length
+  if (upperRatio < 0.7) return t // already mixed/normal case — leave it
+  let first = true
+  return t.toLowerCase().split(/(\s+)/).map((w) => {
+    if (!w.trim()) return w
+    const word = !first && SMALL_WORDS.has(w) ? w : w.charAt(0).toUpperCase() + w.slice(1)
+    first = false
+    return word
+  }).join('')
+}
+
 const norm = (s) => decodeEntities(s).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
 // short key catches near-duplicates across sources (corrigenda, year drift, casing)
 const keyOf = (s) => norm(s).slice(0, 48)
@@ -138,7 +156,7 @@ async function main() {
     if (p.doi && seenDoi.has(p.doi)) continue
     seenKey.add(k)
     if (p.doi) seenDoi.add(p.doi)
-    const entry = { title: decodeEntities(p.title), year: p.year, venue: decodeEntities(p.venue), url: p.url }
+    const entry = { title: fixCaps(p.title), year: p.year, venue: decodeEntities(p.venue), url: p.url }
     ;(classify(p) === 'peer' ? peer : abstracts).push(entry)
   }
 
